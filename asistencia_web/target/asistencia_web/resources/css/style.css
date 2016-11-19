@@ -1,0 +1,84 @@
+header .parte_azul{
+	background-color: #1e4b73;
+    height: 90px;
+    color: white;
+}
+footer{
+    background-color: #272626;
+    height: 130px;
+    margin-top: 50px;
+}
+footer a{
+    color: white;
+}
+.parte_azul h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.imagen_logo{
+    background-color: #fff;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.imagen_logo h2{
+    color: #1e4b73;
+    float: right;
+}
+
+
+.section_home button{
+    background-color: #1e4b73;
+    border: none;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.section_home button a{
+    color: white;
+}
+.rol_1 button,
+.rol_2 button,
+.rol_3 button{
+    background-color: #428bca;
+    border: none;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.rol_2 button,
+.rol_3 button{
+    padding-left: 228px;
+    padding-right: 228px;
+}
+.rol_1 button a,
+.rol_2 button a,
+.rol_3 button a{
+    color: white;
+}
+.rol_1 button a:hover,
+.rol_1 button a:focus,
+.rol_1 button a:active,
+.rol_2 button a:hover,
+.rol_2 button a:focus,
+.rol_2 button a:active,
+.rol_3 button a:hover,
+.rol_3 button a:focus,
+.rol_3 button a:active,{
+    background-color: #e8a730;
+    color: #1e4b73;
+}
+
+
+
+
+/*menu*/
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+.fa-fw {width: 2em;}
