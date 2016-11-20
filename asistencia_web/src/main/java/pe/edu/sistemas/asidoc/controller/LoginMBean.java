@@ -13,4 +13,10 @@ public class LoginMBean
 	{
 		return Enlaces.INICIO;
 	}
+	
+	@RequestMapping( value = "/roles" )
+	public String roles()
+	{
+		return Enlaces.ROLES;
+	}
 }

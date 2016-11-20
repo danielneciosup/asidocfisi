@@ -29,7 +29,7 @@ public class AppConfig extends WebMvcConfigurerAdapter
         resolver.setPrefix( "/views/" );
         resolver.setSuffix( ".html" );
         resolver.setTemplateMode( "LEGACYHTML5" );
-        resolver.setCacheable( false );
+        resolver.setCacheable( false ); // En producción True
         
         return resolver;
     }
@@ -57,10 +57,10 @@ public class AppConfig extends WebMvcConfigurerAdapter
     }
     
     @Override
-   public void addResourceHandlers(ResourceHandlerRegistry registry)
-   {
+    public void addResourceHandlers(ResourceHandlerRegistry registry)
+    {
    	 registry.addResourceHandler("/**").addResourceLocations("/resources/");
-   }    
+    }    
 
     @Override
     public void configureDefaultServletHandling( DefaultServletHandlerConfigurer configurer ) 

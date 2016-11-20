@@ -11,4 +11,9 @@ public class Enlaces
 	 * Enlace a la página de inicio del sistema.
 	 */
 	public static String INICIO = "inicio";
+	
+	/**
+	 * Enlace a la Página de Roles Del Usuario.
+	 */
+	public static String ROLES = "roles";
 }
