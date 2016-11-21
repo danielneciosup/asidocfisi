@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang=en-US>
 <head>
-  <meta charset="<?php echo $site['charset']; ?>">
-  <meta lang="<?php echo $site['lang']?>">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <title>ASISTENCIA - FISI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -34,7 +32,7 @@
                     <li class="active"><a href="registrardocente.html"><i class="fa fa-home fa-fw"></i>Registrar Docente</a></li>
                     <li><a href="#"><i class="fa fa-list-alt fa-fw"></i>Generar Reporte</a></li>
                     <li><a href="#"><i class="fa fa-file-o fa-fw"></i>Autenticar asistencia</a></li>
-                    <li><a href="inicio.html"><i class="fa fa-cogs fa-fw"></i>Cerrar sesiÃ³n</a></li>
+                    <li><a th:href="@{/}"><i class="fa fa-cogs fa-fw"></i>Cerrar sesión</a></li>
                 </ul>
             </div>
             <div class="col-md-9 well">

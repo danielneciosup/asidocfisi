@@ -16,4 +16,9 @@ public class Enlaces
 	 * Enlace a la Página de Roles Del Usuario.
 	 */
 	public static String ROLES = "roles";
+	
+	/**
+	 * Enlace a la Página correspondiente al rol de administrador.
+	 */
+	public static final String ADMINISTRACION = "administracion";
 }

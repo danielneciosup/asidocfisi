@@ -11,5 +11,7 @@
   <modules>
     <module>asistencia_web</module>
     <module>asistencia_bo</module>
+    <module>asistencia_core</module>
+    <module>asistencia_dao</module>
   </modules>
 </project>

@@ -7,12 +7,12 @@
     <groupId>pe.edu.sistemas.asidoc</groupId>
     <artifactId>asistencia_integration_parent</artifactId>
     <version>1.0.0</version>
-    
   </parent>
+  
   <groupId>pe.edu.sistemas.asidoc</groupId>
-  <artifactId>asistencia_bo</artifactId>
+  <artifactId>asistencia_core</artifactId>
   <version>1.0.0</version>
-  <name>asistencia_bo</name>
+  <name>asistencia_core</name>
   <url>http://maven.apache.org</url>
   
   <properties>
