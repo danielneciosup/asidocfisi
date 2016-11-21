@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang=en-US>
 <head>
-  <link rel="shortcut icon" href="img/favicon.png" th:href = "@{/img/favicon.png}" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta lang="es">
+  <link rel="shortcut icon" href="img/favicon.png" th:href="@{img/favicon.png}" type="image/x-icon">
   <title>ASISTENCIA - FISI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="css/bootstrap.css" th:href = "@{/css/bootstrap.css}"/>
-  <link rel="stylesheet" href="css/style.css" th:href = "@{/css/style.css}">
-  <script src="js/jquery.js" th:src = "@{/js/jquery.js}"></script>
-  <script src="js/fancybox.js" th:src = "@{/js/fancybox.js}"></script>
-  <script src="js/bootstrap.js" th:src = "@{/js/bootstrap.js}"></script>
-  <script src="js/bxslider.js" th:src = "@{/js/bxslider.js}"></script>
-  <script src="js/parallax.js" th:src = "@{/js/parallax.js}"></script>
-  <script src="js/app.js" th:src = "@{/js/app.js}"></script>
+  <link rel="stylesheet" href="css/bootstrap.css" th:href="@{css/bootstrap.css}"/>
+  <link rel="stylesheet" href="css/style.css" th:href="@{css/style.css}"/>
+  <script src="js/jquery.js" th:src="@{js/jquery.js}"></script>
+  <script src="js/fancybox.js" th:src="@{js/fancybox.js}"></script>
+  <script src="js/bootstrap.js" th:src="@{js/bootstrap.js}"></script>
+  <script src="js/bxslider.js" th:src="@{js/bxslider.js}"></script>
+  <script src="js/parallax.js" th:src="@{js/parallax.js}"></script>
+  <script src="js/app.js" th:src="@{js/app.js}"></script>
+  <script src="js/jquery.tablesorter.js" th:src="@{js/jquery.tablesorter.js}"></script>
 </head>
 <body>
   	<header>
@@ -20,7 +23,7 @@
 	    </div>
 	    <div class="container imagen_logo">
 	    	<figure class="fisi-logo-container pull-left">
-	            <a href="http://sistemas.unmsm.edu.pe/" target="_blank"><img class="fisi-logo img-responsive" src="img/logo.png" th:src = "@{/img/logo.png}" alt="Logotipo de la Facultad de Ingeniería de Sistemas e Informática - Enlace al home de La página"/></a>
+	            <a href="http://sistemas.unmsm.edu.pe/" target="_blank"><img class="fisi-logo img-responsive" src="img/logo.png" alt="Logotipo de la Facultad de IngenierÃ­a de Sistemas e InformÃ¡tica - Enlace al home de La pÃ¡gina"/></a>
 	        </figure>
 	    </div>
 	</header>
@@ -33,12 +36,12 @@
 		  <br>
 		  Usuario
 		  <br>
-		    <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+		    <input type="text" class="form-control" id="usuario" placeholder="Ingrese su ID de usuario">
 		  </div>
 		  <div class="form-group">
 		  Clave
 		  <br>
-		    <input type="password" class="form-control" id="clave" placeholder="Clave">
+		    <input type="password" class="form-control" id="clave" placeholder="ContraseÃ±a">
 		  </div>
 		  <br>
 		  <center>
@@ -49,6 +52,7 @@
 		</form>
 	</div>
 </body>
+
 </html>
 
 
