@@ -32,8 +32,8 @@ public class DAOImpl<Entidad,Id extends Serializable> implements IDAO<Entidad, I
 	} 
 
 	@SuppressWarnings("unchecked")
-	public Entidad obtenerEntidadPorId(Class<Entidad> clase, Serializable id)
-			throws Exception {
+	public Entidad obtenerEntidadPorId(Class<Entidad> clase, Serializable id) throws Exception 
+	{
 		return (Entidad) sessionFactory.getCurrentSession().createCriteria(clase).add(Restrictions.idEq(id)).uniqueResult();
 	}
 	
