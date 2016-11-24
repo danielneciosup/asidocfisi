@@ -5,5 +5,15 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <!--to pick up all annotation in the package-->
-    <context:component-scan base-package="pe.edu.sistemas.asidoc"/>
+    
+    <context:component-scan base-package="pe.edu.sistemas.asidoc.bo"/>
+    <context:component-scan base-package="pe.edu.sistemas.asidoc.dao"/>
+    <context:component-scan base-package="pe.edu.sistemas.asidoc.core"/>
+    <context:component-scan base-package="pe.edu.sistemas.asidoc.servicio"/>
+    <context:component-scan base-package="pe.edu.sistemas.asidoc.servicio.impl"/>
+    <context:component-scan base-package="pe.edu.sistemas.asidoc.servicio.transformer"/>
+    <context:component-scan base-package="pe.edu.sistemas.asidoc.model"/>
+    <context:component-scan base-package="pe.edu.sistemas.asidoc.controller"/>
+    <context:component-scan base-package="pe.edu.sistemas.asidoc.config"/>
+    
 </beans>

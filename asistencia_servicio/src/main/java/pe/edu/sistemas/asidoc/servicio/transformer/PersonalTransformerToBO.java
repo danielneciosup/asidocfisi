@@ -1,4 +1,4 @@
-package pe.edu.sistemas.asidoc.transformer;
+package pe.edu.sistemas.asidoc.servicio.transformer;
 
 import java.util.ArrayList;
 import java.util.List;
