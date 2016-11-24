@@ -29,6 +29,7 @@ public class AppConfig extends WebMvcConfigurerAdapter
         resolver.setPrefix( "/views/" );
         resolver.setSuffix( ".html" );
         resolver.setTemplateMode( "LEGACYHTML5" );
+        resolver.setCharacterEncoding( "UTF-8" );
         resolver.setCacheable( false ); // En producción True
         
         return resolver;
