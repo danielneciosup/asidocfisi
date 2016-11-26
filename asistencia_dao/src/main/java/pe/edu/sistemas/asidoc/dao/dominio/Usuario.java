@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 
 /**
- * The persistent class for the usuario database table.
+ * The persistent class for the USUARIO database table.
  * 
  */
 @Entity
@@ -15,29 +15,37 @@ public class Usuario implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(name="id_usuario")
+	@Column(name="ID_USUARIO")
 	private Integer idUsuario;
 
 	private String clave;
 
-	@Column(name="nom_usuario")
+	@Column(name="NOM_USUARIO")
 	private String nomUsuario;
 
 	//bi-directional many-to-one association to Personal
 	@ManyToOne
-	@JoinColumn(name="id_personal")
+	@JoinColumn(name="ID_PERSONAL")
 	private Personal personal;
 
 	public Usuario() {
-	}
+	}	
 
 	public Integer getIdUsuario() {
-		return this.idUsuario;
+		return idUsuario;
 	}
 
 	public void setIdUsuario(Integer idUsuario) {
 		this.idUsuario = idUsuario;
 	}
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
 
 	public String getClave() {
 		return this.clave;

@@ -2,44 +2,42 @@ package pe.edu.sistemas.asidoc.dao.dominio;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 
 /**
- * The persistent class for the curso database table.
+ * The persistent class for the CURSO database table.
  * 
  */
 @Entity
 @NamedQuery(name="Curso.findAll", query="SELECT c FROM Curso c")
-public class Curso implements Serializable {
+public class Curso implements Serializable 
+{
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(name="id_curso")
-	private Integer idCurso;
+	@Column(name="ID_CURSO")
+	private long idCurso;
 
-	@Column(name="co_curso")
+	@Column(name="CO_CURSO")
 	private String coCurso;
 
-	@Column(name="nom_curso")
+	@Column(name="NOM_CURSO")
 	private String nomCurso;
 
-	@Column(name="nu_creditos")
-	private Integer nuCreditos;
-
-	//bi-directional many-to-one association to HorarioCurso
-	@OneToMany(mappedBy="curso")
-	private List<HorarioCurso> horarioCursos;
-
+	@Column(name="NU_CREDITOS")
+	private BigDecimal nuCreditos;
+	
 	public Curso() {
 	}
 
-	public Integer getIdCurso() {
+	public long getIdCurso() {
 		return this.idCurso;
 	}
 
-	public void setIdCurso(Integer idCurso) {
+	public void setIdCurso(long idCurso) {
 		this.idCurso = idCurso;
 	}
 
@@ -59,34 +57,11 @@ public class Curso implements Serializable {
 		this.nomCurso = nomCurso;
 	}
 
-	public Integer getNuCreditos() {
+	public BigDecimal getNuCreditos() {
 		return this.nuCreditos;
 	}
 
-	public void setNuCreditos(Integer nuCreditos) {
+	public void setNuCreditos(BigDecimal nuCreditos) {
 		this.nuCreditos = nuCreditos;
 	}
-
-	public List<HorarioCurso> getHorarioCursos() {
-		return this.horarioCursos;
-	}
-
-	public void setHorarioCursos(List<HorarioCurso> horarioCursos) {
-		this.horarioCursos = horarioCursos;
-	}
-
-	public HorarioCurso addHorarioCurso(HorarioCurso horarioCurso) {
-		getHorarioCursos().add(horarioCurso);
-		horarioCurso.setCurso(this);
-
-		return horarioCurso;
-	}
-
-	public HorarioCurso removeHorarioCurso(HorarioCurso horarioCurso) {
-		getHorarioCursos().remove(horarioCurso);
-		horarioCurso.setCurso(null);
-
-		return horarioCurso;
-	}
-
 }

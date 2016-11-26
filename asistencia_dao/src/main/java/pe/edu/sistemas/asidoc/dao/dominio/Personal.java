@@ -6,7 +6,7 @@ import java.util.List;
 
 
 /**
- * The persistent class for the personal database table.
+ * The persistent class for the PERSONAL database table.
  * 
  */
 @Entity
@@ -16,7 +16,7 @@ public class Personal implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(name="id_personal")
+	@Column(name="ID_PERSONAL")
 	private Integer idPersonal;
 
 	private String apellido;
@@ -25,20 +25,24 @@ public class Personal implements Serializable {
 
 	private String nombre;
 
-	//bi-directional many-to-one association to Usuario
-	@OneToMany(mappedBy="personal")
-	private List<Usuario> usuarios;
-
 	public Personal() {
 	}
 
 	public Integer getIdPersonal() {
-		return this.idPersonal;
+		return idPersonal;
 	}
 
 	public void setIdPersonal(Integer idPersonal) {
 		this.idPersonal = idPersonal;
 	}
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
 
 	public String getApellido() {
 		return this.apellido;
@@ -63,27 +67,4 @@ public class Personal implements Serializable {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	public List<Usuario> getUsuarios() {
-		return this.usuarios;
-	}
-
-	public void setUsuarios(List<Usuario> usuarios) {
-		this.usuarios = usuarios;
-	}
-
-	public Usuario addUsuario(Usuario usuario) {
-		getUsuarios().add(usuario);
-		usuario.setPersonal(this);
-
-		return usuario;
-	}
-
-	public Usuario removeUsuario(Usuario usuario) {
-		getUsuarios().remove(usuario);
-		usuario.setPersonal(null);
-
-		return usuario;
-	}
-
 }

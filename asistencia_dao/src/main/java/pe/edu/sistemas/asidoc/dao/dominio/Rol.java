@@ -2,10 +2,11 @@ package pe.edu.sistemas.asidoc.dao.dominio;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
- * The persistent class for the rol database table.
+ * The persistent class for the ROL database table.
  * 
  */
 @Entity
@@ -15,20 +16,20 @@ public class Rol implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(name="id_rol")
-	private Integer idRol;
+	@Column(name="ID_ROL")
+	private long idRol;
 
-	@Column(name="nom_rol")
+	@Column(name="NOM_ROL")
 	private String nomRol;
 
 	public Rol() {
 	}
 
-	public Integer getIdRol() {
+	public long getIdRol() {
 		return this.idRol;
 	}
 
-	public void setIdRol(Integer idRol) {
+	public void setIdRol(long idRol) {
 		this.idRol = idRol;
 	}
 
@@ -39,5 +40,4 @@ public class Rol implements Serializable {
 	public void setNomRol(String nomRol) {
 		this.nomRol = nomRol;
 	}
-
 }

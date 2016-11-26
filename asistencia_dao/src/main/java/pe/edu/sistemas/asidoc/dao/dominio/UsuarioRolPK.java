@@ -4,7 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 /**
- * The primary key class for the usuario_rol database table.
+ * The primary key class for the USUARIO_ROL database table.
  * 
  */
 @Embeddable
@@ -12,24 +12,24 @@ public class UsuarioRolPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="id_usuario", insertable=false, updatable=false)
-	private Integer idUsuario;
+	@Column(name="ID_USUARIO", insertable=false, updatable=false)
+	private long idUsuario;
 
-	@Column(name="id_rol", insertable=false, updatable=false)
-	private Integer idRol;
+	@Column(name="ID_ROL", insertable=false, updatable=false)
+	private long idRol;
 
 	public UsuarioRolPK() {
 	}
-	public Integer getIdUsuario() {
+	public long getIdUsuario() {
 		return this.idUsuario;
 	}
-	public void setIdUsuario(Integer idUsuario) {
+	public void setIdUsuario(long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	public Integer getIdRol() {
+	public long getIdRol() {
 		return this.idRol;
 	}
-	public void setIdRol(Integer idRol) {
+	public void setIdRol(long idRol) {
 		this.idRol = idRol;
 	}
 
@@ -42,15 +42,15 @@ public class UsuarioRolPK implements Serializable {
 		}
 		UsuarioRolPK castOther = (UsuarioRolPK)other;
 		return 
-			this.idUsuario.equals(castOther.idUsuario)
-			&& this.idRol.equals(castOther.idRol);
+			(this.idUsuario == castOther.idUsuario)
+			&& (this.idRol == castOther.idRol);
 	}
 
 	public int hashCode() {
 		final int prime = 31;
 		int hash = 17;
-		hash = hash * prime + this.idUsuario.hashCode();
-		hash = hash * prime + this.idRol.hashCode();
+		hash = hash * prime + ((int) (this.idUsuario ^ (this.idUsuario >>> 32)));
+		hash = hash * prime + ((int) (this.idRol ^ (this.idRol >>> 32)));
 		
 		return hash;
 	}

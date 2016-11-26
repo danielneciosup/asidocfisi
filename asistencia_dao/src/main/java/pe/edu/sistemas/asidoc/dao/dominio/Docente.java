@@ -7,7 +7,7 @@ import java.util.List;
 
 
 /**
- * The persistent class for the docente database table.
+ * The persistent class for the DOCENTE database table.
  * 
  */
 @Entity
@@ -17,49 +17,41 @@ public class Docente implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(name="id_docente")
-	private Integer idDocente;
+	@Column(name="ID_DOCENTE")
+	private long idDocente;
 
-	@Column(name="ape_materno")
+	@Column(name="APE_MATERNO")
 	private String apeMaterno;
 
-	@Column(name="ape_paterno")
+	@Column(name="APE_PATERNO")
 	private String apePaterno;
 
-	@Column(name="clave_sistema")
+	@Column(name="CLAVE_SISTEMA")
 	private String claveSistema;
 
-	@Column(name="cod_docente")
+	@Column(name="COD_DOCENTE")
 	private String codDocente;
 
 	private String email;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="fe_nacimiento")
+	@Column(name="FE_NACIMIENTO")
 	private Date feNacimiento;
 
-	@Column(name="nom_docente")
+	@Column(name="NOM_DOCENTE")
 	private String nomDocente;
 
-	@Column(name="num_dni")
+	@Column(name="NUM_DNI")
 	private String numDni;
-
-	//bi-directional many-to-one association to Foto
-	@OneToMany(mappedBy="docente")
-	private List<Foto> fotos;
-
-	//bi-directional many-to-one association to HorarioCurso
-	@OneToMany(mappedBy="docente")
-	private List<HorarioCurso> horarioCursos;
-
+	
 	public Docente() {
 	}
 
-	public Integer getIdDocente() {
+	public long getIdDocente() {
 		return this.idDocente;
 	}
 
-	public void setIdDocente(Integer idDocente) {
+	public void setIdDocente(long idDocente) {
 		this.idDocente = idDocente;
 	}
 
@@ -126,49 +118,4 @@ public class Docente implements Serializable {
 	public void setNumDni(String numDni) {
 		this.numDni = numDni;
 	}
-
-	public List<Foto> getFotos() {
-		return this.fotos;
-	}
-
-	public void setFotos(List<Foto> fotos) {
-		this.fotos = fotos;
-	}
-
-	public Foto addFoto(Foto foto) {
-		getFotos().add(foto);
-		foto.setDocente(this);
-
-		return foto;
-	}
-
-	public Foto removeFoto(Foto foto) {
-		getFotos().remove(foto);
-		foto.setDocente(null);
-
-		return foto;
-	}
-
-	public List<HorarioCurso> getHorarioCursos() {
-		return this.horarioCursos;
-	}
-
-	public void setHorarioCursos(List<HorarioCurso> horarioCursos) {
-		this.horarioCursos = horarioCursos;
-	}
-
-	public HorarioCurso addHorarioCurso(HorarioCurso horarioCurso) {
-		getHorarioCursos().add(horarioCurso);
-		horarioCurso.setDocente(this);
-
-		return horarioCurso;
-	}
-
-	public HorarioCurso removeHorarioCurso(HorarioCurso horarioCurso) {
-		getHorarioCursos().remove(horarioCurso);
-		horarioCurso.setDocente(null);
-
-		return horarioCurso;
-	}
-
 }

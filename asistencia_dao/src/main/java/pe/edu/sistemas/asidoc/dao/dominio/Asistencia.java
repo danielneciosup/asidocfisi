@@ -7,7 +7,7 @@ import java.util.List;
 
 
 /**
- * The persistent class for the asistencia database table.
+ * The persistent class for the ASISTENCIA database table.
  * 
  */
 @Entity
@@ -17,35 +17,31 @@ public class Asistencia implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(name="id_asistencia")
-	private Integer idAsistencia;
+	@Column(name="ID_ASISTENCIA")
+	private long idAsistencia;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="fe_registro")
+	@Column(name="FE_REGISTRO")
 	private Date feRegistro;
 
-	@Column(name="tipo_asistencia")
+	@Column(name="TIPO_ASISTENCIA")
 	private String tipoAsistencia;
 
 	private String validacion;
 
 	//bi-directional many-to-one association to HorarioCurso
 	@ManyToOne
-	@JoinColumn(name="id_horario_curso")
+	@JoinColumn(name="ID_HORARIO_CURSO")
 	private HorarioCurso horarioCurso;
-
-	//bi-directional many-to-one association to AsistenciaDetalle
-	@OneToMany(mappedBy="asistencia")
-	private List<AsistenciaDetalle> asistenciaDetalles;
 
 	public Asistencia() {
 	}
 
-	public Integer getIdAsistencia() {
+	public long getIdAsistencia() {
 		return this.idAsistencia;
 	}
 
-	public void setIdAsistencia(Integer idAsistencia) {
+	public void setIdAsistencia(long idAsistencia) {
 		this.idAsistencia = idAsistencia;
 	}
 
@@ -80,27 +76,4 @@ public class Asistencia implements Serializable {
 	public void setHorarioCurso(HorarioCurso horarioCurso) {
 		this.horarioCurso = horarioCurso;
 	}
-
-	public List<AsistenciaDetalle> getAsistenciaDetalles() {
-		return this.asistenciaDetalles;
-	}
-
-	public void setAsistenciaDetalles(List<AsistenciaDetalle> asistenciaDetalles) {
-		this.asistenciaDetalles = asistenciaDetalles;
-	}
-
-	public AsistenciaDetalle addAsistenciaDetalle(AsistenciaDetalle asistenciaDetalle) {
-		getAsistenciaDetalles().add(asistenciaDetalle);
-		asistenciaDetalle.setAsistencia(this);
-
-		return asistenciaDetalle;
-	}
-
-	public AsistenciaDetalle removeAsistenciaDetalle(AsistenciaDetalle asistenciaDetalle) {
-		getAsistenciaDetalles().remove(asistenciaDetalle);
-		asistenciaDetalle.setAsistencia(null);
-
-		return asistenciaDetalle;
-	}
-
 }

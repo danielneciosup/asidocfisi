@@ -6,26 +6,26 @@ import java.util.List;
 
 
 /**
- * The persistent class for the horario_curso database table.
+ * The persistent class for the HORARIO_CURSO database table.
  * 
  */
 @Entity
-@Table(name="horario_curso")
+@Table(name="HORARIO_CURSO")
 @NamedQuery(name="HorarioCurso.findAll", query="SELECT h FROM HorarioCurso h")
 public class HorarioCurso implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(name="id_horario_curso")
-	private Integer idHorarioCurso;
+	@Column(name="ID_HORARIO_CURSO")
+	private long idHorarioCurso;
 
 	private String estado;
 
-	@Column(name="nom_grupo")
+	@Column(name="NOM_GRUPO")
 	private String nomGrupo;
 
-	@Column(name="nom_tipo_clase")
+	@Column(name="NOM_TIPO_CLASE")
 	private String nomTipoClase;
 
 	private String semestre;
@@ -36,27 +36,27 @@ public class HorarioCurso implements Serializable {
 
 	//bi-directional many-to-one association to Curso
 	@ManyToOne
-	@JoinColumn(name="id_curso")
+	@JoinColumn(name="ID_CURSO")
 	private Curso curso;
 
 	//bi-directional many-to-one association to Docente
 	@ManyToOne
-	@JoinColumn(name="id_docente")
+	@JoinColumn(name="ID_DOCENTE")
 	private Docente docente;
 
 	//bi-directional many-to-one association to Horario
 	@ManyToOne
-	@JoinColumn(name="id_horario")
+	@JoinColumn(name="ID_HORARIO")
 	private Horario horario;
 
 	public HorarioCurso() {
 	}
 
-	public Integer getIdHorarioCurso() {
+	public long getIdHorarioCurso() {
 		return this.idHorarioCurso;
 	}
 
-	public void setIdHorarioCurso(Integer idHorarioCurso) {
+	public void setIdHorarioCurso(long idHorarioCurso) {
 		this.idHorarioCurso = idHorarioCurso;
 	}
 

@@ -6,44 +6,44 @@ import java.sql.Timestamp;
 
 
 /**
- * The persistent class for the asistencia_detalle database table.
+ * The persistent class for the ASISTENCIA_DETALLE database table.
  * 
  */
 @Entity
-@Table(name="asistencia_detalle")
+@Table(name="ASISTENCIA_DETALLE")
 @NamedQuery(name="AsistenciaDetalle.findAll", query="SELECT a FROM AsistenciaDetalle a")
 public class AsistenciaDetalle implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(name="id_detalle")
-	private Integer idDetalle;
+	@Column(name="ID_DETALLE")
+	private long idDetalle;
 
 	private Timestamp hora;
 
-	@Column(name="ruta_foto")
+	@Column(name="RUTA_FOTO")
 	private String rutaFoto;
 
-	@Column(name="tipo_marcacion")
+	@Column(name="TIPO_MARCACION")
 	private String tipoMarcacion;
 
-	@Column(name="tipo_registro")
+	@Column(name="TIPO_REGISTRO")
 	private String tipoRegistro;
 
 	//bi-directional many-to-one association to Asistencia
 	@ManyToOne
-	@JoinColumn(name="id_asistencia")
+	@JoinColumn(name="ID_ASISTENCIA")
 	private Asistencia asistencia;
 
 	public AsistenciaDetalle() {
 	}
 
-	public Integer getIdDetalle() {
+	public long getIdDetalle() {
 		return this.idDetalle;
 	}
 
-	public void setIdDetalle(Integer idDetalle) {
+	public void setIdDetalle(long idDetalle) {
 		this.idDetalle = idDetalle;
 	}
 

@@ -4,6 +4,18 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="asistencia_servicio-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/asistencia_servicio/asistencia_servicio">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="asistencia_bo-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/asistencia_bo/asistencia_bo">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="asistencia_dao-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/asistencia_dao/asistencia_dao">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="asistencia_core-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/asistencia_core/asistencia_core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="asistencia_web"/>
         <property name="java-output-path" value="/asistencia_web/target/classes"/>
     </wb-module>

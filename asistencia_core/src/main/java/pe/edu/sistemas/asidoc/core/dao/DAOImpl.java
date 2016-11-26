@@ -1,4 +1,4 @@
-package pe.edu.sistemas.asidoc.core.dao;
+	package pe.edu.sistemas.asidoc.core.dao;
 
 import java.io.Serializable;
 import java.util.ArrayList;

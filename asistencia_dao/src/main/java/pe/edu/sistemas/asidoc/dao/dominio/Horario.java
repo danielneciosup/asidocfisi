@@ -7,7 +7,7 @@ import java.util.List;
 
 
 /**
- * The persistent class for the horario database table.
+ * The persistent class for the HORARIO database table.
  * 
  */
 @Entity
@@ -17,30 +17,26 @@ public class Horario implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(name="id_horario")
-	private Integer idHorario;
+	@Column(name="ID_HORARIO")
+	private long idHorario;
 
-	@Column(name="ho_fin")
+	@Column(name="HO_FIN")
 	private Timestamp hoFin;
 
-	@Column(name="ho_inicio")
+	@Column(name="HO_INICIO")
 	private Timestamp hoInicio;
 
-	@Column(name="nom_dia")
+	@Column(name="NOM_DIA")
 	private String nomDia;
-
-	//bi-directional many-to-one association to HorarioCurso
-	@OneToMany(mappedBy="horario")
-	private List<HorarioCurso> horarioCursos;
 
 	public Horario() {
 	}
 
-	public Integer getIdHorario() {
+	public long getIdHorario() {
 		return this.idHorario;
 	}
 
-	public void setIdHorario(Integer idHorario) {
+	public void setIdHorario(long idHorario) {
 		this.idHorario = idHorario;
 	}
 
@@ -67,27 +63,4 @@ public class Horario implements Serializable {
 	public void setNomDia(String nomDia) {
 		this.nomDia = nomDia;
 	}
-
-	public List<HorarioCurso> getHorarioCursos() {
-		return this.horarioCursos;
-	}
-
-	public void setHorarioCursos(List<HorarioCurso> horarioCursos) {
-		this.horarioCursos = horarioCursos;
-	}
-
-	public HorarioCurso addHorarioCurso(HorarioCurso horarioCurso) {
-		getHorarioCursos().add(horarioCurso);
-		horarioCurso.setHorario(this);
-
-		return horarioCurso;
-	}
-
-	public HorarioCurso removeHorarioCurso(HorarioCurso horarioCurso) {
-		getHorarioCursos().remove(horarioCurso);
-		horarioCurso.setHorario(null);
-
-		return horarioCurso;
-	}
-
 }
