@@ -21,4 +21,15 @@ public class UsuarioServiceImpl implements UsuarioService
 	{
 		return usuarioTransformerToBO.transformer( usuarioDao.obtenerUsuario( idUsuario ) );
 	}
+
+	@Override
+	public Integer autenticarUsuario(String nomUsuario, String contrasenia) throws Exception
+	{
+		// TODO Auto-generated method stub
+		Integer pertenece = 0;
+		
+		
+		
+		return pertenece;
+	}
 }

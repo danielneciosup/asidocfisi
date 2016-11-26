@@ -13,7 +13,7 @@ public class LoginMBean
 {
 	@Autowired
 	private LoginModel loginModel;
-	
+		
 	@Autowired
 	private UsuarioService usuarioService;
 		
