@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta lang="es">
-  <link rel="shortcut icon" href="img/favicon.png" th:href="@{img/favicon.png}" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <title>ASISTENCIA - FISI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="css/bootstrap.css" th:href="@{css/bootstrap.css}"/>
-  <link rel="stylesheet" href="css/style.css" th:href="@{css/style.css}"/>
-  <script src="js/jquery.js" th:src="@{js/jquery.js}"></script>
-  <script src="js/fancybox.js" th:src="@{js/fancybox.js}"></script>
-  <script src="js/bootstrap.js" th:src="@{js/bootstrap.js}"></script>
-  <script src="js/bxslider.js" th:src="@{js/bxslider.js}"></script>
-  <script src="js/parallax.js" th:src="@{js/parallax.js}"></script>
-  <script src="js/app.js" th:src="@{js/app.js}"></script>
-  <script src="js/jquery.tablesorter.js" th:src="@{js/jquery.tablesorter.js}"></script>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/jquery.js"></script>
+  <script src="js/fancybox.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/bxslider.js"></script>
+  <script src="js/parallax.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/jquery.tablesorter.js"></script>
 </head>
 <body>
   	<header>
 	    <div class="parte_azul">
-	        <center><h2>SISTEMA CONTROL DE ASISTENCIA AL DOCENTE</h1></center>
+	        <center><h2>SISTEMA DE CONTROL DE ASISTENCIA DOCENTE</h1></center>
 	    </div>
 	    <div class="container imagen_logo">
 	    	<figure class="fisi-logo-container pull-left">
@@ -38,7 +38,13 @@
 	  		<center>
 				<h4><br>Elija rol para ingresar<br><br></h4>
 				<div class="rol_1">
-					<a th:href="@{/administracion}"><button>Administrador</button></a>
+					<a href="administracion.html"><button>Administrador</button></a>
+				</div>
+				<div class="rol_2">
+				  	<a href="#"><button>Rol X</button></a>
+				</div>
+				<div class="rol_3">
+				  	<a href="#"><button>Rol Y</button></a>
 				</div>
 			</center>
 	  	</div>

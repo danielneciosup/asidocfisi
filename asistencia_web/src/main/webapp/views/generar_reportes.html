@@ -19,7 +19,27 @@
 <body>
 	<div>
 		<center> 
-			<h2 style="margin-bottom: 50px;">Generar Reportes</h2>
+			<h2 style="margin-bottom: 30px;">Generar Reportes</h2>
+		</center>
+		<center>
+			<div class="container" style="margin-bottom: 20px;">
+				<div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
+					<div style="float: left;">
+		 				<p style="margin-top: 12px;">Desde:  </p>
+			 		</div>
+			 		<div style="float: right;">
+						<input style="margin-bottom: 5px;margin-top: 5px;padding-left: 32px;" type="date" class="form-control"">
+					</div>
+				</div>
+				<div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
+					<div style="float: left;">
+		 				<p style="margin-top: 12px;">Hasta:  </p>
+			 		</div>
+			 		<div style="float: right;">
+						<input style="margin-bottom: 5px;margin-top: 5px;padding-left: 32px;" type="date" class="form-control"">
+					</div>
+				</div>
+			</div>
 		</center>
 		<table cellspacing="0" cellpadding="0" id="mitabla" class="tabla">
 		  <thead>
@@ -79,35 +99,19 @@
 		      <td><a href="#">Eliminar</a></td>
 		      <td><a href="#">Modificar</a></td>
 		    </tr>
-		    <tr>
-		      <td class="align-left">Cell1</td>
-		      <td>Cell2</td>
-		      <td>Juan Pérez</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
-		      <td><a href="#">Modificar</a></td>
-		    </tr>
-		    <tr>
-		      <td class="align-left">Cell1</td>
-		      <td>Cell2</td>
-		      <td>Juan Pérez</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
-		      <td><a href="#">Modificar</a></td>
-		    </tr>
-		    <tr>
-		      <td class="align-left">Cell1</td>
-		      <td>Cell2</td>
-		      <td>Juan Pérez</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
-		      <td><a href="#">Modificar</a></td>
-		    </tr>
 		  </tbody>
 		</table> 
+		<center>
+			<ul class="pagination">
+			  <li><a href="#">&laquo;</a></li>
+			  <li><a href="#">1</a></li>
+			  <li><a href="#">2</a></li>
+			  <li><a href="#">3</a></li>
+			  <li><a href="#">4</a></li>
+			  <li><a href="#">5</a></li>
+			  <li><a href="#">&raquo;</a></li>
+			</ul>
+		</center>
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function() 

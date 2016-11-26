@@ -1,7 +1,96 @@
+.center {
+    margin-top:50px;   
+}
+
+.modal-header {
+  padding-bottom: 5px;
+}
+
+.modal-footer {
+      padding: 0;
+  }
+    
+.modal-footer .btn-group button {
+  height:40px;
+  border-top-left-radius : 0;
+  border-top-right-radius : 0;
+  border: none;
+  border-right: 1px solid #ddd;
+}
+  
+.modal-footer .btn-group:last-child > button {
+  border-right: 0;
+}
+.btn-default a{
+  color: black;
+}
+.registro_docente{
+  background-color: transparent;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 4px;
+  border: none;
+  color: black;
+  border: 1px solid #adadad;
+}
+.registro_docente a{
+  color: black;
+  text-decoration: none;
+}
+
+.tomar_foto{
+  background-color: transparent;
+  border: 1px solid #adadad;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 20px;
+}
+
+.botones_registro_docente button{
+  background-color: transparent;
+  border: 1px solid #adadad;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 20px;
+}
+.botones_registro_docente a{
+  color: black;
+}
+
+#eliminar1 button,
+#eliminar2 button,
+#eliminar3 button,
+#eliminar4 button,
+#eliminar5 button{
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 header .parte_azul{
   background-color: #1e4b73;
-  height: 90px;
+  height: 115px;
   color: white;
+  margin-top: 0px;
 }
 footer{
   background-color: #272626;
@@ -14,13 +103,13 @@ footer a{
 .parte_azul h2{
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 30px;
+    padding-top: 45px;
     padding-bottom: 20px;
 }
 .imagen_logo{
     background-color: #fff;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .imagen_logo h2{
     color: #1e4b73;
@@ -117,8 +206,6 @@ footer a{
   font-size: 12px;
   font-weight: 200;
   background-color: #e1a436;
-  
-  top: 240px;
   width: 250px;
   height: auto;
   color: #e1ffff;
@@ -235,7 +322,7 @@ footer a{
     top: 10px;
     z-index: 10 !important;
     padding: 3px;
-    background-color: #ffffff;
+    background-color: #1e4b73;
     color: #000;
     width: 40px;
     text-align: center;
@@ -245,6 +332,10 @@ footer a{
     font-size: 22px;
     padding-left: 20px;
     line-height: 50px !important;
+  }
+  .menu_admin{
+    float: left;
+    width: 100%;
   }
 }
 @media (min-width: 767px) {
@@ -256,19 +347,31 @@ body {
   margin: 0px;
   padding: 0px;
 }
-
-
+@media(min-width: 768px;){
+  .nav-side-menu {
+    top: 240px;
+  }
+}
+@media (max-width: 723px) {
+   header .parte_azul {
+      height: 140px;
+      margin-top: -15px;
+  }
+  .imagen_logo{
+      margin-bottom: 30px;
+  }
+}
+@media (min-width: 724px) {
+   header .parte_azul {
+      margin-top: -16px;
+  }
+}
 
 
 
 /*TABLE*/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,300italic,400italic);
 
-body{
-  padding-top:15px;
-  font-family: 'Open Sans', sans-serif;
-    font-size:13px;
-}
 
 .tabla {
   margin: 0 auto;
@@ -307,4 +410,121 @@ body{
 
 
 
+/*PAGINATION*/
+
+/*LOGIN*/
+body {
+  background-color:#fff;
+  font: normal 14px Roboto,arial,sans-serif;
+}
+
+.container {
+}
+
+.form-login {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
+h4 { 
+ border-bottom-width:1px;
+ text-align: center;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.glyphicon { 
+  margin-right:10px; 
+}
+.panel-body { 
+  padding:0px; 
+  background-color: #1e4b73;
+}
+.panel-body table tr td { 
+  padding-left: 15px 
+}
+.panel-body .table {
+  margin-bottom: 0px; 
+}
+.tabla a{
+  color: black;
+}
+
+
+
+
+
+
+
+
+/*nombre administrador*/
+.imagen_logo h2{
+  float: right;
+}
+
+
+/*estilos menu*/
+.panel-heading{
+    background-color: #e1a436;
+}
+
+/*alerta de inicio de sesion*/
+.modal .modal-header {
+  border-bottom: none;
+  position: relative;
+}
+.modal .modal-header .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.modal .modal-footer {
+  border-top: none;
+  padding: 0;
+}
+.modal .modal-footer .btn-group > .btn:first-child {
+  border-bottom-left-radius: 0;
+}
+.modal .modal-footer .btn-group > .btn:last-child {
+  border-top-right-radius: 0;
+}
+
+
+
+/*boton de inicio de sesion*/
+.enjoy-css {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 120px;
+  height: 35px;
+  cursor: pointer;
+  margin: 0 auto;
+  border: .5px solid rgb(38, 169, 245);
+  -webkit-border-radius: 40px;
+  border-radius: 35px;
+  font: normal 20px/35px "Domine Font Family", Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  letter-spacing: 1px;
+  background: rgb(17, 30, 63);
+}
 

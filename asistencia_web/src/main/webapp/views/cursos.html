@@ -19,95 +19,97 @@
 <body>
 	<div>
 		<center> 
-			<h2 style="margin-bottom: 50px;">Horarios</h2>
+			<h2 style="margin-bottom: 50px;">Cursos</h2>
 		</center>
 		<table cellspacing="0" cellpadding="0" id="mitabla" class="tabla">
 		  <thead>
 		    <tr>
+		      <th><span>Código del curso</span></th>
 		      <th><span>Nombre del curso</span></th>
-		      <th><span>Horario</span></th>
 		      <th><span>Docente</span></th>
-		      <th><span>Días</span></th>
-		      <th><span>Ver</span></th>
 		      <th><span>Eliminar</span></th>
 		      <th><span>Modificar</span></th>
 		    </tr>
 		  </thead>
 		  <tbody>
 		    <tr>
-		      <td class="align-left">Cell1</td>
+		      <td class="align-left">C002-001</td>
 		      <td>Cell2</td>
 		      <td>Juan Pérez</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
+		      <td id="eliminar1">
+		      	<a href="#">
+		      		<button data-toggle="modal"	class="btn btn-primary center-block">
+		      			Eliminar
+		      		</button>
+		      	</a>
+		      </td>
 		      <td><a href="#">Modificar</a></td>
 		    </tr>
 		    <tr>
-		      <td class="align-left">Cell1</td>
+		      <td class="align-left">C002-001</td>
 		      <td>Cell2</td>
 		      <td>Juan Pérez</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
+		      <td id="eliminar2">
+		      	<a href="#">
+		      		<button data-toggle="modal"	class="btn btn-primary center-block">
+		      			Eliminar
+		      		</button>
+		      	</a>
+		      </td>
 		      <td><a href="#">Modificar</a></td>
 		    </tr>
 		    <tr>
-		      <td class="align-left">Cell1</td>
+		      <td class="align-left">C002-001</td>
 		      <td>Cell2</td>
 		      <td>Juan Pérez</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
+		      <td id="eliminar3">
+		      	<a href="#">
+		      		<button data-toggle="modal"	class="btn btn-primary center-block">
+		      			Eliminar
+		      		</button>
+		      	</a>
+		      </td>
 		      <td><a href="#">Modificar</a></td>
 		    </tr>
 		    <tr>
-		      <td class="align-left">Cell1</td>
+		      <td class="align-left">C002-001</td>
 		      <td>Cell2</td>
 		      <td>Juan Pérez</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
+		      <td id="eliminar4">
+		      	<a href="#">
+		      		<button data-toggle="modal"	class="btn btn-primary center-block">
+		      			Eliminar
+		      		</button>
+		      	</a>
+		      </td>
 		      <td><a href="#">Modificar</a></td>
 		    </tr>
 		    <tr>
-		      <td class="align-left">Cell1</td>
+		      <td class="align-left">C002-001</td>
 		      <td>Cell2</td>
 		      <td>Juan Pérez</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
-		      <td><a href="#">Modificar</a></td>
-		    </tr>
-		    <tr>
-		      <td class="align-left">Cell1</td>
-		      <td>Cell2</td>
-		      <td>Juan Pérez</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
-		      <td><a href="#">Modificar</a></td>
-		    </tr>
-		    <tr>
-		      <td class="align-left">Cell1</td>
-		      <td>Cell2</td>
-		      <td>Juan Pérez</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
-		      <td><a href="#">Modificar</a></td>
-		    </tr>
-		    <tr>
-		      <td class="align-left">Cell1</td>
-		      <td>Cell2</td>
-		      <td>Juan Pérez</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
+		      <td id="eliminar5">
+		      	<a href="#">
+		      		<button data-toggle="modal"	class="btn btn-primary center-block">
+		      			Eliminar
+		      		</button>
+		      	</a>
+		      </td>
 		      <td><a href="#">Modificar</a></td>
 		    </tr>
 		  </tbody>
 		</table> 
+		<center>
+			<ul class="pagination">
+			  <li><a href="#">&laquo;</a></li>
+			  <li><a href="#">1</a></li>
+			  <li><a href="#">2</a></li>
+			  <li><a href="#">3</a></li>
+			  <li><a href="#">4</a></li>
+			  <li><a href="#">5</a></li>
+			  <li><a href="#">&raquo;</a></li>
+			</ul>
+		</center>
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function() 
@@ -115,9 +117,17 @@
 		        $(".tabla").tablesorter(); 
 		    } 
 		); 
+		$('#eliminar1').click(function(){
+	      $('.alert-warning').css('display','block');
+        }); 
 	</script>
 </body>
-
+	<div class="container">
+	    <div class="modal alert alert-warning" style="display: none;top:-285px;">
+	        <a href="docente.html" class="btn btn-xs btn-warning pull-right">Si deseo eliminarlo</a>
+	        <strong>Cuidado:</strong> Está a un click de eliminar un curso. ¿Aún desea Eliminar el curso?
+	    </div>
+	</div>
 </html>
 
 

@@ -19,55 +19,87 @@
 <body>
 	<div>
 		<center> 
-			<h2 style="margin-bottom: 50px;">Autenticar Asistencia</h2>
+			<h2>Lista a Autenticar</h2>
+			 	<form class="navbar-form navbar-left">
+			 		<button type="submit" class="btn btn-default">Docente</button>
+			        <div class="form-group">
+			          <input type="text" class="form-control" placeholder="Nombre del Docente">
+			        </div>
+		      	</form>
 		</center>
-		<div class="container">
-			<div style="margin-left: 10%;">
-				<div style="float: left;margin-right: 30px;">
-					<p>Profesor:</p>
-					<p>Hora de registro:</p>
-					<p>Fecha de registro:</p>
-				</div>
-				<div>
-					<p>Nombre del profesor</p>
-					<p>Hora de entrada</p>
-					<p>Fecha registrada</p>
-				</div>
-			</div>
-			<div style="margin-left: 10%;">
-				<div style="float: left;">
-					<center>
-						<img class="img-responsive" src="img/docente.png">	
-						<h5>Foto Original</h5>			
-					</center>
-				</div>
-				<div>
-					<center>
-						<img class="img-responsive" src="img/docente.png">
-						<h5>Foto Generada</h5>
-					</center>
-				</div>
-			</div>
-		</div>
-		<div class="container botones" style="margin-top: 30px;margin-bottom: 50px;">
-			<div class="col-md-4 col-sm-4 col-xs-12">
-				<center>
-					<button>Confirmar</button>
-				</center>	
-			</div>
-			<div class="col-md-4 col-sm-4 col-xs-12">
-				<center>
-					<button>Denegar</button>
-				</center>	
-			</div>
-			<div class="col-md-4 col-sm-4 col-xs-12">
-				<center>
-					<button>Cancelar</button>
-				</center>	
-			</div>
-		</div>
-		
+		<table cellspacing="0" cellpadding="0" id="mitabla" class="tabla">
+		  <thead>
+		    <tr>
+		      <th><span>Profesor</span></th>
+		      <th><span>Fecha</span></th>
+		      <th><span>Hora</span></th>
+		      <th><span>Horario</span></th>
+		      <th><span>Estado</span></th>
+		      <th><span>Autenticar</span></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td class="align-left">Profesor1</td>
+		      <td>Cell1</td>
+		      <td>Cell2</td>
+		      <td>Cell3</td>
+		      <td>F</td>
+		      <td><a href="validar_autenticar_asistencia.html">Autenticar</a></td>
+		    </tr>
+		    <tr>
+		      <td class="align-left">Profesor1</td>
+		      <td>Cell1</td>
+		      <td>Cell2</td>
+		      <td>Cell3</td>
+		      <td>F</td>
+		      <td><a href="validar_autenticar_asistencia.html">Autenticar</a></td>
+		    </tr>
+		    <tr>
+		      <td class="align-left">Profesor1</td>
+		      <td>Cell1</td>
+		      <td>Cell2</td>
+		      <td>Cell3</td>
+		      <td>F</td>
+		      <td><a href="validar_autenticar_asistencia.html">Autenticar</a></td>
+		    </tr>
+		    <tr>
+		      <td class="align-left">Profesor1</td>
+		      <td>Cell1</td>
+		      <td>Cell2</td>
+		      <td>Cell3</td>
+		      <td>F</td>
+		      <td><a href="validar_autenticar_asistencia.html">Autenticar</a></td>
+		    </tr>
+		    <tr>
+		      <td class="align-left">Profesor1</td>
+		      <td>Cell1</td>
+		      <td>Cell2</td>
+		      <td>Cell3</td>
+		      <td>F</td>
+		      <td><a href="validar_autenticar_asistencia.html">Autenticar</a></td>
+		    </tr>
+		  </tbody>
+		</table> 
+		<center>
+			<ul class="pagination">
+			  <li><a href="#">&laquo;</a></li>
+			  <li><a href="#">1</a></li>
+			  <li><a href="#">2</a></li>
+			  <li><a href="#">3</a></li>
+			  <li><a href="#">4</a></li>
+			  <li><a href="#">5</a></li>
+			  <li><a href="#">&raquo;</a></li>
+			</ul>
+		</center>
 	</div>
+	<script type="text/javascript">
+		$(document).ready(function() 
+		    { 
+		        $(".tabla").tablesorter(); 
+		    } 
+		); 
+	</script>
 </body>
 
 </html>

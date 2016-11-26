@@ -26,9 +26,6 @@ public class Docente implements Serializable {
 	@Column(name="APE_PATERNO")
 	private String apePaterno;
 
-	@Column(name="CLAVE_SISTEMA")
-	private String claveSistema;
-
 	@Column(name="COD_DOCENTE")
 	private String codDocente;
 
@@ -69,14 +66,6 @@ public class Docente implements Serializable {
 
 	public void setApePaterno(String apePaterno) {
 		this.apePaterno = apePaterno;
-	}
-
-	public String getClaveSistema() {
-		return this.claveSistema;
-	}
-
-	public void setClaveSistema(String claveSistema) {
-		this.claveSistema = claveSistema;
 	}
 
 	public String getCodDocente() {

@@ -3,72 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta lang="es">
-  <link rel="shortcut icon" href="img/favicon.png" th:href="@{img/favicon.png}" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <title>ASISTENCIA - FISI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="css/bootstrap.css" th:href="@{css/bootstrap.css}"/>
-  <link rel="stylesheet" href="css/style.css" th:href="@{css/style.css}"/>
-  <script src="js/jquery.js" th:src="@{js/jquery.js}"></script>
-  <script src="js/fancybox.js" th:src="@{js/fancybox.js}"></script>
-  <script src="js/bootstrap.js" th:src="@{js/bootstrap.js}"></script>
-  <script src="js/bxslider.js" th:src="@{js/bxslider.js}"></script>
-  <script src="js/parallax.js" th:src="@{js/parallax.js}"></script>
-  <script src="js/app.js" th:src="@{js/app.js}"></script>
-  <script src="js/jquery.tablesorter.js" th:src="@{js/jquery.tablesorter.js}"></script>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/jquery.js"></script>
+  <script src="js/fancybox.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/bootbox.min.js"></script>
+  <script src="js/bxslider.js"></script>
+  
+  <script src="js/app.js"></script>
+  <script src="js/jquery.tablesorter.js"></script>
 </head>
 <body>
     <header>
         <div class="parte_azul">
-            <center><h2>SISTEMA CONTROL DE ASISTENCIA AL DOCENTE</h1></center>
+            <center><h2>SISTEMA DE CONTROL DE ASISTENCIA DOCENTE</h1></center>
         </div>
         <div class="container imagen_logo">
             <figure class="fisi-logo-container pull-left">
                 <a href="http://sistemas.unmsm.edu.pe/" target="_blank"><img class="fi  si-logo img-responsive" src="img/logo.png" alt="Logotipo de la Facultad de Ingeniería de Sistemas e Informática - Enlace al home de La página"/></a>
             </figure>
+            <h2>Administrador: Pedro Sanchez</h2>
         </div>
     </header>
-
     <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-              <div class="nav-side-menu">
-                  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-                      <div class="menu-list">
-                          <ul id="menu-content" class="menu-content collapse out" style="font-size: 15px;">
-                              <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                                <a href="#" style="padding-left: 20px;"><i class="fa fa-gift fa-lg"></i> Mantenimiento <span class="arrow"></span></a>
-                              </li>
-                              <ul class="sub-menu collapse" id="products">
-                                  <li class="active" style="padding-left: 50px;" id="docente"><a href="#">Docentes</a></li>
-                                  <li style="padding-left: 50px;" id="horarios"><a href="#">Horarios</a></li>
-                                  <li style="padding-left: 50px;" id="cursos"><a href="#">Cursos</a></li>
-                              </ul>
-
-
-                              <li data-toggle="collapse" data-target="#service" class="collapsed">
-                                <a href="#" style="padding-left: 20px;"><i class="fa fa-globe fa-lg"></i> Reportes <span class="arrow"></span></a>
-                              </li>  
-                              <ul class="sub-menu collapse" id="service">
-                                <li style="padding-left: 50px;" id="generar_reportes">Reportes</li>
-                                <li style="padding-left: 50px;" id="confirmar_asistencia">Confirmar Asistencia</li>
-                              </ul>
-                               <li>
-                                <a th:href="@{/}" style="padding-left: 20px;">
+  <div class="row">
+    
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-3 col-md-3">
+              <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                              Mantenimiento
+                          </h4>
+                        </div>
+                      </a>
+                      <div id="collapseOne" class="panel-collapse collapse">
+                          <div class="panel-body">
+                              <table class="table">
+                                  <tr>                                    
+                                    <td id="docente">
+                                      <a href="#">
+                                        Docentes
+                                      </a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td id="cursos">
+                                      <a href="#">
+                                        Cursos
+                                      </a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td id="horarios">
+                                      <a href="#">
+                                        Horarios
+                                      </a>
+                                    </td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="panel panel-default">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                Control
+                            </h4>
+                        </div>
+                      </a>
+                      <div id="collapseTwo" class="panel-collapse collapse">
+                          <div class="panel-body">
+                              <table class="table">
+                                  <tr>
+                                      <td id="generar_reportes">
+                                          <a href="#">Asistencias</a> 
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td id="confirmar_asistencia">
+                                          <a href="#">Asistencias por confirmar</a>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </div>
+                  </div>  
+                  <a href="inicio.html">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
                                 Cerrar Sesión
-                                </a>
-                                </li>
-                          </ul>
-                   </div>
+                            </h4>
+                        </div>
+                    </div>
+                  </a>
               </div>
-            </div>
-            <div class="col-md-9 well">
-              <h2>Bienvenido Administrador: Pedro Sanchez</h3>
+          </div>
+          <div class="col-md-9 col-sm-9 well">
               <div id="main">
-                <iframe id="content" style="width: 100%; height: 500px;"></iframe>
+                <iframe id="content" style="width: 100%; height: 500px;border-radius: 10px;"></iframe>
               </div>
+
             </div>
-        </div>
-    </div>
+      </div>
+  </div>
+    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
       $(function(){
@@ -97,7 +145,28 @@
           
         });
       });
+
+
+      $("#myModal").on("show", function() {    // wire up the OK button to dismiss the modal when shown
+          $("#myModal a.btn").on("click", function(e) {
+              console.log("button pressed");   // just as an example...
+              $("#myModal").modal('hide');     // dismiss the dialog
+          });
+      });
+      $("#myModal").on("hide", function() {    // remove the event listeners when the dialog is dismissed
+          $("#myModal a.btn").off("click");
+      });
       
+      $("#myModal").on("hidden", function() {  // remove the actual elements from the DOM when fully hidden
+          $("#myModal").remove();
+      });
+      
+      $("#myModal").modal({                    // wire up the actual modal functionality and show the dialog
+        "backdrop"  : "static",
+        "keyboard"  : true,
+        "show"      : true                     // ensure the modal is shown immediately
+      });
+
 </script>
 </body>
 </html>
