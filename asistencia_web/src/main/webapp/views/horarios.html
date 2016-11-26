@@ -26,15 +26,17 @@
 			          <input type="text" class="form-control" placeholder="Nombre del Docente">
 			        </div>
 		      	</form>
+		      	<button class="registro_docente" style="float:right;margin-top:-60px;margin-right:45px;" data-toggle="modal" data-target="#squarespaceModaldos" class="btn btn-primary center-block">Crear Horario</button>
 		</center>
 		<table cellspacing="0" cellpadding="0" id="mitabla" class="tabla">
 		  <thead>
 		    <tr>
 		      <th><span>Curso</span></th>
 		      <th><span>Días</span></th>
-		      <th><span>Docente</span></th>
 		      <th><span>Hora inicio</span></th>
 		      <th><span>Hora fin</span></th>
+		      <th><span>Grupo</span></th>
+		      <th><span>Tipo</span></th>
 		      <th><span>Eliminar</span></th>
 		      <th><span>Modificar</span></th>
 		    </tr>
@@ -43,47 +45,82 @@
 		    <tr>
 		      <td class="align-left">Cell1</td>
 		      <td>Cell2</td>
-		      <td>Juan Pérez</td>
 		      <td>Cell3</td>
 		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
-		      <td><a href="#">Modificar</a></td>
+		      <td>Cell5</td>
+		      <td>Cell6</td>
+		      <td id="eliminar1">
+		      	<a href="#">
+		      		<button data-toggle="modal"	class="btn btn-primary center-block">
+		      			<center><img src="img/eliminar.png"></center>
+		      		</button>
+		      	</a>
+		      </td>
+		      <td><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block"><center><img src="img/modificar.png"></center></button></td>
 		    </tr>
 		    <tr>
 		      <td class="align-left">Cell1</td>
 		      <td>Cell2</td>
-		      <td>Juan Pérez</td>
 		      <td>Cell3</td>
 		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
-		      <td><a href="#">Modificar</a></td>
+		      <td>Cell5</td>
+		      <td>Cell6</td>
+		      <td id="eliminar2">
+		      	<a href="#">
+		      		<button data-toggle="modal"	class="btn btn-primary center-block">
+		      			<center><img src="img/eliminar.png"></center>
+		      		</button>
+		      	</a>
+		      </td>
+		      <td><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block"><center><img src="img/modificar.png"></center></button></td>
 		    </tr>
 		    <tr>
 		      <td class="align-left">Cell1</td>
 		      <td>Cell2</td>
-		      <td>Juan Pérez</td>
 		      <td>Cell3</td>
 		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
-		      <td><a href="#">Modificar</a></td>
+		      <td>Cell5</td>
+		      <td>Cell6</td>
+		      <td id="eliminar3">
+		      	<a href="#">
+		      		<button data-toggle="modal"	class="btn btn-primary center-block">
+		      			<center><img src="img/eliminar.png"></center>
+		      		</button>
+		      	</a>
+		      </td>
+		      <td><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block"><center><img src="img/modificar.png"></center></button></td>
 		    </tr>
 		    <tr>
 		      <td class="align-left">Cell1</td>
 		      <td>Cell2</td>
-		      <td>Juan Pérez</td>
 		      <td>Cell3</td>
 		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
-		      <td><a href="#">Modificar</a></td>
+		      <td>Cell5</td>
+		      <td>Cell6</td>
+		      <td id="eliminar4">
+		      	<a href="#">
+		      		<button data-toggle="modal"	class="btn btn-primary center-block">
+		      			<center><img src="img/eliminar.png"></center>
+		      		</button>
+		      	</a>
+		      </td>
+		      <td><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block"><center><img src="img/modificar.png"></center></button></td>
 		    </tr>
 		    <tr>
 		      <td class="align-left">Cell1</td>
 		      <td>Cell2</td>
-		      <td>Juan Pérez</td>
 		      <td>Cell3</td>
 		      <td>Cell4</td>
-		      <td><a href="#">Eliminar</a></td>
-		      <td><a href="#">Modificar</a></td>
+		      <td>Cell5</td>
+		      <td>Cell6</td>
+		      <td id="eliminar5">
+		      	<a href="#">
+		      		<button data-toggle="modal"	class="btn btn-primary center-block">
+		      			<center><img src="img/eliminar.png"></center>
+		      		</button>
+		      	</a>
+		      </td>
+		      <td><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block"><center><img src="img/modificar.png"></center></button></td>
 		    </tr>
 		  </tbody>
 		</table> 
@@ -105,8 +142,178 @@
 		        $(".tabla").tablesorter(); 
 		    } 
 		); 
+		$('#eliminar1').click(function(){
+	      $('.alert-warning').css('display','block');
+        }); 
+        $('#eliminar2').click(function(){
+	      $('.alert-warning').css('display','block');
+        }); 
+        $('#eliminar3').click(function(){
+	      $('.alert-warning').css('display','block');
+        }); 
+        $('#eliminar4').click(function(){
+	      $('.alert-warning').css('display','block');
+        }); 
+        $('#eliminar5').click(function(){
+	      $('.alert-warning').css('display','block');
+        }); 
 	</script>
 </body>
+
+
+<div class="container">
+	    <div class="modal alert alert-warning" style="display: none;top:-285px;">
+	    	<a href="horarios.html" class="btn btn-xs btn-warning pull-right" style="margin-left:5px;">No, ahora no joven</a>
+	        <a href="horarios.html" class="btn btn-xs btn-warning pull-right">Si deseo eliminarlo</a>
+	        <strong>Cuidado:</strong> Está a un click de eliminar un horario. ¿Aún desea Eliminar el horario?
+	    </div>
+	</div>
+
+
+
+<div class="modal fade" data-backdrop="static" data-keyboard="false" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 0px;">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel"><b>Modificar Horario</b></h3>
+		</div>
+		<div class="modal-body">
+			<form>
+			  <div class="form-group">
+                <label for="exampleInputEmail1">Nombre del curso</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre del curso" style="margin-bottom: 0;margin-top: 0;display: block;width: 100%;height: 30px;">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Día del curso</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Día del curso" style="margin-bottom: 0;margin-top: 0;display: block;width: 100%;height: 30px;">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Hora de inicio</label>
+                <input type="time" class="form-control" id="exampleInputEmail1" placeholder="Hora de inicio" style="margin-bottom: 0;margin-top: 0;display: block;width: 100%;height: 30px;">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Hora de fin</label>
+                <input type="time" class="form-control" id="exampleInputEmail1" placeholder="Hora de fin" style="margin-bottom: 0;margin-top: 0;display: block;width: 100%;height: 30px;">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Grupo</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Grupo" style="margin-bottom: 0;margin-top: 0;display: block;width: 100%;height: 30px;">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Tipo</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Tipo" style="margin-bottom: 0;margin-top: 0;display: block;width: 100%;height: 30px;">
+              </div>
+              <center><button type="submit" class="btn btn-default">Aceptar</button></center>
+            </form>
+
+		</div>
+	</div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" data-backdrop="static" data-keyboard="false" id="squarespaceModaldos" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 0px;">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel"><b>Crear Horario</b></h3>
+		</div>
+		<div class="modal-body">
+			<form>
+			  <div class="form-group">
+                <label for="exampleInputEmail1">Nombre del curso</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre del curso" style="margin-bottom: 0;margin-top: 0;display: block;width: 100%;height: 30px;">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Día del curso</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Día del curso" style="margin-bottom: 0;margin-top: 0;display: block;width: 100%;height: 30px;">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Hora de inicio</label>
+                <input type="time" class="form-control" id="exampleInputEmail1" placeholder="Hora de inicio" style="margin-bottom: 0;margin-top: 0;display: block;width: 100%;height: 30px;">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Hora de fin</label>
+                <input type="time" class="form-control" id="exampleInputEmail1" placeholder="Hora de fin" style="margin-bottom: 0;margin-top: 0;display: block;width: 100%;height: 30px;">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Grupo</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Grupo" style="margin-bottom: 0;margin-top: 0;display: block;width: 100%;height: 30px;">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Tipo</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Tipo" style="margin-bottom: 0;margin-top: 0;display: block;width: 100%;height: 30px;">
+              </div>
+              <center><button type="submit" class="btn btn-default">Aceptar</button></center>
+            </form>
+
+		</div>
+	</div>
+  </div>
+</div>
+
+
+
+
+<!--div class="modal fade" data-backdrop="static" data-keyboard="false" id="squarespaceModaldos" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel"><b>Crear Curso</b></h3>
+		</div>
+		<div class="modal-body">
+			<form>
+			<div class="form-group">
+              <label for="exampleInputEmail1">Código del curso</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Código del curso">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Nombre del curso</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre del curso">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Créditos</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Créditos">
+              </div>
+              <center><button type="submit" class="btn btn-default">Aceptar</button></center>
+            </form>
+
+		</div>
+	</div>
+  </div>
+</div>
+
+
+<div class="modal fade" data-backdrop="static" data-keyboard="false" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel"><b>Modificar Curso</b></h3>
+		</div>
+		<div class="modal-body">
+			<form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Nuevo nombre del curso</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre del curso">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Créditos</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Créditos">
+              </div>
+              <center><button type="submit" class="btn btn-default">Aceptar</button></center>
+            </form>
+
+		</div>
+	</div>
+  </div>
+</div-->
+
+
 
 </html>
 

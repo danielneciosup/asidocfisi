@@ -10,6 +10,7 @@
     
     <context:component-scan base-package="pe.edu.sistemas.asidoc.bo"/>
     <context:component-scan base-package="pe.edu.sistemas.asidoc.dao"/>
+    <context:component-scan base-package="pe.edu.sistemas.asidoc.dao.dominio"/>
     <context:component-scan base-package="pe.edu.sistemas.asidoc.core"/>
     <context:component-scan base-package="pe.edu.sistemas.asidoc.servicio"/>
     <context:component-scan base-package="pe.edu.sistemas.asidoc.servicio.impl"/>
