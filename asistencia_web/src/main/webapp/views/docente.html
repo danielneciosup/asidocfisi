@@ -51,7 +51,7 @@
 		      		</button>
 		      	</a>
 		      </td>
-		      <td><a href="modificar_docente.html"><center><img src="img/modificar.png"></center></a></td>
+		      <td id="modificarDocente"><a href="#"><center><img src="img/modificar.png"></center></a></td>
 		    </tr>
 		    <tr>
 		      <td class="align-left">Cell1</td>
@@ -93,7 +93,7 @@
 		      		</button>
 		      	</a>
 		      </td>
-		      <td><a href="modificar_docente.html"><center><img src="img/modificar.png"></center></a></td>
+		      <td><a th:href="@{modificaDocente}"><center><img src="img/modificar.png"></center></a></td>
 		    </tr>
 		    <tr>
 		      <td class="align-left">Cell1</td>
@@ -107,7 +107,7 @@
 		      		</button>
 		      	</a>
 		      </td>
-		      <td><a href="modificar_docente.html"><center><img src="img/modificar.png"></center></a></td>
+		      <td><a th:href="@{modificaDocente}"><center><img src="img/modificar.png"></center></a></td>
 		    </tr>
 		  </tbody>
 		</table> 
@@ -134,6 +134,9 @@
 		$(document).ready(function() 
 		    { 
 		        $(".tabla").tablesorter(); 
+		        $("#modificarDocente").click(function(){
+		        	$("#content").load("/asistencia_web/modificarDocente");
+		        });
 		    } 
 		); 
 		$('#eliminar1').click(function(){

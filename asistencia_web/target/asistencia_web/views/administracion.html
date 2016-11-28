@@ -44,25 +44,31 @@
                           </h4>
                         </div>
                       </a>
+                      
+                      <!--
+                      <button type="button" class="btn btn-primary" th:id="#{docente}"></button>
+                      -->
+                      
+                      
                       <div id="collapseOne" class="panel-collapse collapse">
                           <div class="panel-body">
                               <table class="table">
                                   <tr>                                    
-                                    <td id="docente">
+                                    <td th:id="#{docente}">
                                       <a href="#">
                                         Docentes
                                       </a>
                                     </td>
                                   </tr>
                                   <tr>
-                                    <td id="cursos">
+                                    <td th:id="#{cursos}">
                                       <a href="#">
                                         Cursos
                                       </a>
                                     </td>
                                   </tr>
                                   <tr>
-                                    <td id="horarios">
+                                    <td th:id="#{horarios}" th:onclick="${'javascript:click(${horarios})'}">
                                       <a href="#">
                                         Horarios
                                       </a>
@@ -97,7 +103,7 @@
                           </div>
                       </div>
                   </div>  
-                  <a href="inicio.html">
+                  <a th:href="@{/}">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -122,28 +128,71 @@
       $(function(){
           $('#mitabla').tablesorter(); 
       });
-      $(document).ready(function(e) {
-        $('#horarios').on('click', function(){
+      
+      $(document).ready(function(e) 
+	  {
+    	  th:onclick="click(#{horarios})"	
+    	  th:attr="onclick=content(${/horarios})"
+	  });    
+  	  
+      <!-- 
+          th:onclick="click(#{horarios})"	
+		  th:attr="onclick=content(${/horarios})"
+			  
+    	  
+    	  
+    	  
+		  
+		  $(document).ready(function(e) 
+		 		  {
+		          
+		    	      th:onclick="click(${horarios})"
+		    		  th:attr="onclick=content(${horarios})"
+		  
+		  
+    	  $('#horarios').on('click', function()
+		  {          
+             $('#content').attr('src', 'horarios.html');
+          });
+    	      
+    	      $('#{docente}').on('click', function()
+             {
+                $('#content').attr('src', '#{/docente}');          
+             });
+    	      
+    	      
+    	      
+    	      
+    	      
+    	      
+    	      
+    	      
+    	      
+    	      
+    	      $('#docente').on('click', function()
+    	              {
+    	                 $('#content').attr('th:src', '#{/docente}');          
+    	              });
+    	              
+    	              
+    	            $('#cursos').on('click', function(){   
+    	              $('#content').attr('src', 'cursos.html');
+    	              
+    	            });
+    	            $('#generar_reportes').on('click', function(){   
+    	              $('#content').attr('src', 'generar_reportes.html');
+    	              
+    	            });
+    	            $('#confirmar_asistencia').on('click', function(){   
+    	              $('#content').attr('src', 'confirmar_asistencia.html');
+    	              
+    	            });
+    	      
+    	      
+    	  -->
           
-          $('#content').attr('src', 'horarios.html');
-        });
-        $('#docente').on('click', function(){
-
-          $('#content').attr('src', 'docente.html');
           
-        });
-        $('#cursos').on('click', function(){   
-          $('#content').attr('src', 'cursos.html');
           
-        });
-        $('#generar_reportes').on('click', function(){   
-          $('#content').attr('src', 'generar_reportes.html');
-          
-        });
-        $('#confirmar_asistencia').on('click', function(){   
-          $('#content').attr('src', 'confirmar_asistencia.html');
-          
-        });
       });
 
 

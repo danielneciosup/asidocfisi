@@ -6,6 +6,7 @@ import java.util.Set;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -18,6 +19,7 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @Configuration
 @EnableWebMvc
+@ComponentScan( "pe.edu.sistemas.asidoc.web" )
 public class AppConfig extends WebMvcConfigurerAdapter
 {
 
@@ -37,7 +39,7 @@ public class AppConfig extends WebMvcConfigurerAdapter
 
     @Bean
     public SpringTemplateEngine templateEngine() 
-    {
+    {        
         Set<IDialect> dialects = new HashSet<IDialect>();
         dialects.add(new LayoutDialect());
 
