@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 public class DAOImpl<Entidad,Id extends Serializable> implements IDAO<Entidad, Id>{
 
 	@Autowired
-	protected SessionFactory sessionFactory;
+	public SessionFactory sessionFactory;
 
 	public void insertar(Entidad entidad) throws Exception {
 		sessionFactory.getCurrentSession().persist(entidad);

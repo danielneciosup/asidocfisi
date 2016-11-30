@@ -13,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.dialect.IDialect;
+import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring3.SpringTemplateEngine;
 import org.thymeleaf.spring3.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
@@ -36,16 +37,19 @@ public class AppConfig extends WebMvcConfigurerAdapter
         
         return resolver;
     }
-
+    
     @Bean
     public SpringTemplateEngine templateEngine() 
     {        
-        Set<IDialect> dialects = new HashSet<IDialect>();
-        dialects.add(new LayoutDialect());
-
+//        Set<IDialect> dialects = new HashSet<IDialect>();
+//        dialects.add( new LayoutDialect() );
+    	
+    	//Set<SpringSecurityDialect> dialects = new HashSet<SpringSecurityDialect>();
+    	    	
         SpringTemplateEngine engine = new SpringTemplateEngine();
-        engine.setTemplateResolver(templateResolver());
-        engine.setAdditionalDialects( dialects );
+        engine.setTemplateResolver( templateResolver() );      
+//        engine.setAdditionalDialects( dialects );
+        
         return engine;
     }
 
@@ -55,7 +59,8 @@ public class AppConfig extends WebMvcConfigurerAdapter
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine());
         resolver.setOrder(1);
-        resolver.setViewNames(new String[]{ "*", "js/*", "template/*" });
+        resolver.setViewNames( new String[]{ "*", "/resources/js/*", "/resources/css/*", "/resources/img/*", "views/*" } );
+        
         return resolver;
     }
     

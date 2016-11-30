@@ -28,7 +28,9 @@ public class UsuarioServiceImpl implements UsuarioService
 		// TODO Auto-generated method stub
 		Integer pertenece = 0;
 		
+		pertenece = usuarioDao.autenticarUsuario(nomUsuario, contrasenia);
 		
+		System.out.println( pertenece );
 		
 		return pertenece;
 	}

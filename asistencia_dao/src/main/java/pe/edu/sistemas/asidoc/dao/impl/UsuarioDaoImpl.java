@@ -4,6 +4,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,14 +38,13 @@ public class UsuarioDaoImpl extends DAOImpl< Usuario, Integer > implements Usuar
 		try 
 		{
 			connection = Conexion.obtenerConexion();
-			statement = connection.prepareCall( "{dbasidoc.fn_autenticar_usuario(?,?)}" );
-			statement.setString( 1, nomUsuario );
-			statement.setString( 2, nomContrasenia );
+			statement = connection.prepareCall( "{ ? = call dbasidoc.fn_autenticar_usuario(?,?) }" );
+			statement.setString( 2, nomUsuario );
+			statement.setString( 3, nomContrasenia );
+			statement.registerOutParameter( 1, Types.INTEGER );
 			statement.execute();
 			
-			resultSet = (ResultSet) statement.getResultSet();
-			
-			pertenece = resultSet.getInt( 1 );
+			pertenece = statement.getInt( 1 );
 		} 
 		catch (SQLException e) 
 		{

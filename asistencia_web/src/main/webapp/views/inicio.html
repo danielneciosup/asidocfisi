@@ -1,5 +1,5 @@
 	<!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
 		<meta lang="es">
@@ -39,17 +39,19 @@
 				<div class="modal-body">
 					
 		            <!-- content goes here -->
-					<form>
+					<form action="#" th:action="@{/roles}" method="post" th:object = "${loginModel}" >
 		              <div class="form-group">
 		                <label for="exampleInputEmail1" style="font-size: 25px;">Usuario</label>
-		                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese su Usuario aquí">
 		              </div>
+   		                <input type="text" class="form-control" th:field="*{usuario}" id="text" name = "text" placeholder="Usuario" />
 		              <div class="form-group">
 		                <label for="exampleInputPassword1" style="font-size: 25px;">Contraseña</label>
-		                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su Contraseña aquí">
+		                <input type="password" th:field="*{clave}" class="form-control" id="password" placeholder="Contraseña"/>
 		              </div>
-		              <div class="enjoy-css"><a th:href="@{roles}">Ingresar</a></div>
+		              <!-- <div class="enjoy-css"><a th:href="@{roles}">Ingresar</a></div>-->
+		              <button type="submit" class="btn btn-lg">Ingresar</button>
 					  <link async href="http://fonts.googleapis.com/css?family=Advent%20Pro" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+		              <span th:text="${message}"></span>
 		            </form>
 				</div>
 			</div>

@@ -19,7 +19,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <common.dbcp.version>1.4</common.dbcp.version>
     <spring.version>3.2.5.RELEASE</spring.version>
-	<postgresql.version>9.4.1208</postgresql.version>
+	<postgresql.version>9.2-1003-jdbc4</postgresql.version>
   </properties>
   
   <dependencies>
@@ -34,6 +34,12 @@
         <artifactId>asistencia_core</artifactId>
         <version>1.0.0</version>
      </dependency>
+     
+     <dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>${postgresql.version}</version>
+	 </dependency>
           
      <dependency>
 		<groupId>commons-dbcp</groupId>
