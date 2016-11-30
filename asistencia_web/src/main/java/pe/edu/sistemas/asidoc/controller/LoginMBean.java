@@ -22,26 +22,16 @@ public class LoginMBean
 	@Autowired
 	private UsuarioService usuarioService;
 		
-	//@RequestMapping( value = "/" )
 	@RequestMapping( value = "/" )
 	public String inicio(Model model)
 	{
-		model.addAttribute("loginModel",loginModel);
-		model.addAttribute("message","Normal");
+		model.addAttribute( "loginModel", loginModel );
+		model.addAttribute("message", "");
 		return Enlaces.INICIO;
 	}
-	
-	/*@RequestMapping( value = "/" , method = RequestMethod.GET )
-	public String rolesForm(Model model){
-		LoginModel loginModel = new LoginModel();
-		model.addAttribute("loginModel", loginModel);
-		return Enlaces.INICIO;
-	}*/
-	
-	//@RequestMapping( value = "/roles" )
+
 	@RequestMapping( value = "/roles" , method = RequestMethod.POST )
-	//public String roles(@ModelAttribute LoginModel loginModel, BindingResult bindingResult, MultipartHttpServletRequest request)
-	public String roles(@ModelAttribute LoginModel loginModel, Model model)
+	public String roles( @ModelAttribute LoginModel loginModel, Model model )
 	{		
 		int pertenece = 0;
 		try 
@@ -50,38 +40,23 @@ public class LoginMBean
 		} 
 		catch (Exception e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println(e.getMessage() );
 		}
+
+		model.addAttribute( "loginModel", loginModel );
+		model.addAttribute( "message", "Credenciales incorrectas" );
 		
-		//System.out.println( loginModel.getUsuario() );
-		//System.out.println( loginModel.getClave() );
-		//System.out.println( pertenece );
-		
-		model.addAttribute("loginModel",loginModel);
-		model.addAttribute("message","Credenciales incorrectas");
-		if( pertenece == 1 )
+		if( pertenece != 0 )
 			return Enlaces.ROLES;
 		else 
 			return Enlaces.INICIO;
 	}
 	
-	// Login form with error
    @RequestMapping("/login_error")
    public String loginError(Model model) 
    {
       model.addAttribute("loginError", true);
       return Enlaces.INICIO;
    }   
-   
-   
-   /*public ResponseEntity<String> login()
-   {
-	   
-	   
-	   
-	   return new ResponseEntity<String>(HttpStatus.OK);
-	   return new ResponseEntity<String>(HttpStatus.FORBIDDEN);
-   }*/
 }
