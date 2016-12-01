@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang=en-US>
-<head>
+<head xmlns:th="http://www.thymeleaf.org">
   <meta charset="UTF-8">
   <meta lang="es">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
@@ -31,7 +31,7 @@
 
   	<div class="container luegodelogueo">
 	  	<div class="col-md-4 col-sm-4 col-xs-12">
-	  		<h3>Usuario: <span th:text="${personal.nombre}"></span></h3>
+	  		<h3>Usuario: <span th:text="${personal.nombre + ' ' + personal.apellido}"></span></h3>
 	  		<img class="img-responsive" src="img/docente.png">
 	  	</div>
 	  	<div class="col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-12 col-xs-offset-0">

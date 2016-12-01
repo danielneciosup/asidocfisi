@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pe.edu.sistemas.asidoc.bo.PersonalBO;
 import pe.edu.sistemas.asidoc.bo.RolBO;
 import pe.edu.sistemas.asidoc.model.LoginModel;
-import pe.edu.sistemas.asidoc.model.UsuarioRolesModel;
 import pe.edu.sistemas.asidoc.servicio.UsuarioService;
 import pe.edu.sistemas.asidoc.util.Enlaces;
-
 
 @Controller
 public class LoginMBean
@@ -64,10 +62,11 @@ public class LoginMBean
 			{
 				roles = usuarioService.obtenerRolesPorIdUsuario( idUsuario );
 				personal = usuarioService.obtenerDatosPersonalesPorIdUsuario( idUsuario );
-				model.addAttribute("roles", roles);
-				model.addAttribute("personal", personal);
-				request.getSession().setAttribute("usuario", personal.getNombre());
-				request.getSession().setAttribute("isLogout", 0);
+				model.addAttribute( "roles", roles );
+				model.addAttribute( "personal", personal );
+				request.getSession().setAttribute( "nombre", personal.getNombre() );
+				request.getSession().setAttribute( "apellido", personal.getApellido() );
+				request.getSession().setAttribute( "isLogout", 0 );
 			} 
 			catch (Exception e) 
 			{
