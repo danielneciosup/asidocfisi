@@ -1,5 +1,9 @@
 package pe.edu.sistemas.asidoc.dao;
 
+import java.util.List;
+
+import pe.edu.sistemas.asidoc.bo.PersonalBO;
+import pe.edu.sistemas.asidoc.bo.RolBO;
 import pe.edu.sistemas.asidoc.dao.dominio.Usuario;
 
 public interface UsuarioDao 
@@ -22,4 +26,13 @@ public interface UsuarioDao
 	 * @return 1 si exite en la base de datos; sino null.
 	 */
 	public Integer autenticarUsuario( String nomUsuario, String nomContrasenia );
+	
+	/**
+	 * Obtiene los distintos roles que tiene un usuario identificado por {idUsuario}
+	 * @param idUsuario es el identificador del usuario
+	 * @return una lista de los roles que tiene el usuario.
+	 */
+	public List<RolBO> obtenerRolesPorUsuarioId( Integer idUsuario );
+	
+	public PersonalBO obtenerDatosPersonalesPorIdUsuario( Integer idUsuario );
 }

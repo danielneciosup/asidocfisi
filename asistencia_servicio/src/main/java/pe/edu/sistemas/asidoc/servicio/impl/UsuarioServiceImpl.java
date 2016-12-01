@@ -1,8 +1,12 @@
 package pe.edu.sistemas.asidoc.servicio.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import pe.edu.sistemas.asidoc.bo.PersonalBO;
+import pe.edu.sistemas.asidoc.bo.RolBO;
 import pe.edu.sistemas.asidoc.bo.UsuarioBO;
 import pe.edu.sistemas.asidoc.dao.UsuarioDao;
 import pe.edu.sistemas.asidoc.servicio.UsuarioService;
@@ -25,7 +29,6 @@ public class UsuarioServiceImpl implements UsuarioService
 	@Override
 	public Integer autenticarUsuario(String nomUsuario, String contrasenia) throws Exception
 	{
-		// TODO Auto-generated method stub
 		Integer pertenece = 0;
 		
 		pertenece = usuarioDao.autenticarUsuario(nomUsuario, contrasenia);
@@ -34,4 +37,20 @@ public class UsuarioServiceImpl implements UsuarioService
 		
 		return pertenece;
 	}
+
+	@Override
+	public List<RolBO> obtenerRolesPorIdUsuario(Integer idUsuario) throws Exception 
+	{
+		List< RolBO > roles = usuarioDao.obtenerRolesPorUsuarioId( idUsuario );
+		
+		return roles;
+	}
+
+	@Override
+	public PersonalBO obtenerDatosPersonalesPorIdUsuario(Integer idUsuario)	throws Exception 
+	{
+		PersonalBO personal = usuarioDao.obtenerDatosPersonalesPorIdUsuario( idUsuario );
+		
+		return personal;
+	}	
 }

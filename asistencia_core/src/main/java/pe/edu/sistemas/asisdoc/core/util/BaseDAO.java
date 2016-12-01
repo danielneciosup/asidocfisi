@@ -29,7 +29,7 @@ public class BaseDAO {
 			System.err.println("Error: cerrarResultSet: " + se);
 		}
 	}
-
+	
 	public static void cerrarStatement(PreparedStatement stmt)
 			throws RuntimeException 
 	{
