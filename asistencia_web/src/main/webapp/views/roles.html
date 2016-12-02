@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=en-US>
+<html lang=en-US xmlns:th="http://www.w3.org/1999/xhtml">
 <head xmlns:th="http://www.thymeleaf.org">
   <meta charset="UTF-8">
   <meta lang="es">
@@ -19,7 +19,7 @@
 <body>
   	<header>
 	    <div class="parte_azul">
-	        <center><h2>SISTEMA DE CONTROL DE ASISTENCIA DOCENTE</h1></center>
+	        <center><h2>SISTEMA DE CONTROL DE ASISTENCIA DOCENTE</h2></center>
 	    </div>
 	    <div class="container imagen_logo">
 	    	<figure class="fisi-logo-container pull-left">
@@ -37,9 +37,6 @@
 	  	<div class="col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-12 col-xs-offset-0">
 	  		<center>
 				<h4><br>Elija rol para ingresar<br><br></h4>
-<!-- 				<div class="rol_1"> -->
-<!-- 					<a th:href="@{administracion}"><button>Administrador</button></a> -->
-<!-- 				</div> -->
 				<div class="rol_1" th:each="rol:${roles}">
 					<a th:href="@{administracion}"><button><span th:text="${rol.nomRol}"></span></button></a> 
 				</div>
@@ -48,6 +45,3 @@
 	</div>
 </body>
 </html>
-
-
-

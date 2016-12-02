@@ -13,8 +13,6 @@ import pe.edu.sistemas.asidoc.util.Enlaces;
 @Controller
 public class RolesMBean
 {
-	
-	
 	@RequestMapping( value = "/administracion" , method= RequestMethod.GET )
 	public String administracion(Model model, HttpServletRequest request)
 	{		

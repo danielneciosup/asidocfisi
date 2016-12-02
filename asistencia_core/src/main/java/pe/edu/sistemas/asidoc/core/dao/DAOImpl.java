@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository("dao")
-public class DAOImpl<Entidad,Id extends Serializable> implements IDAO<Entidad, Id>{
-
+public class DAOImpl<Entidad,Id extends Serializable> implements IDAO<Entidad, Id>
+{
 	@Autowired
 	public SessionFactory sessionFactory;
 

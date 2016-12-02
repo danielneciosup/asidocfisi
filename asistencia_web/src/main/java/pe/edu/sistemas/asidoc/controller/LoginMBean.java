@@ -1,6 +1,5 @@
 package pe.edu.sistemas.asidoc.controller;
 
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -68,7 +67,7 @@ public class LoginMBean
 				request.getSession().setAttribute( "apellido", personal.getApellido() );
 				request.getSession().setAttribute( "isLogout", 0 );
 			} 
-			catch (Exception e) 
+			catch ( Exception e )
 			{
 				e.printStackTrace();
 			}

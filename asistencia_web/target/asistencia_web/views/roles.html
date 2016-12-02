@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang=en-US>
-<head>
+<html lang=en-US xmlns:th="http://www.w3.org/1999/xhtml">
+<head xmlns:th="http://www.thymeleaf.org">
   <meta charset="UTF-8">
   <meta lang="es">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
@@ -19,7 +19,7 @@
 <body>
   	<header>
 	    <div class="parte_azul">
-	        <center><h2>SISTEMA DE CONTROL DE ASISTENCIA DOCENTE</h1></center>
+	        <center><h2>SISTEMA DE CONTROL DE ASISTENCIA DOCENTE</h2></center>
 	    </div>
 	    <div class="container imagen_logo">
 	    	<figure class="fisi-logo-container pull-left">
@@ -31,20 +31,17 @@
 
   	<div class="container luegodelogueo">
 	  	<div class="col-md-4 col-sm-4 col-xs-12">
-	  		<h3>Usuario: Pedro Sanchez</h3>
+	  		<h3>Usuario: <span th:text="${personal.nombre + ' ' + personal.apellido}"></span></h3>
 	  		<img class="img-responsive" src="img/docente.png">
 	  	</div>
 	  	<div class="col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-12 col-xs-offset-0">
 	  		<center>
 				<h4><br>Elija rol para ingresar<br><br></h4>
-				<div class="rol_1">
-					<a th:href="@{administracion}"><button>Administrador</button></a>
+				<div class="rol_1" th:each="rol:${roles}">
+					<a th:href="@{administracion}"><button><span th:text="${rol.nomRol}"></span></button></a> 
 				</div>
 			</center>
 	  	</div>
 	</div>
 </body>
 </html>
-
-
-

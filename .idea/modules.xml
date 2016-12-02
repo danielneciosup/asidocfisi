@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/asistencia_bo/asistencia_bo.iml" filepath="$PROJECT_DIR$/asistencia_bo/asistencia_bo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/asistencia_core/asistencia_core.iml" filepath="$PROJECT_DIR$/asistencia_core/asistencia_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/asistencia_dao/asistencia_dao.iml" filepath="$PROJECT_DIR$/asistencia_dao/asistencia_dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/asistencia_integration_parent.iml" filepath="$PROJECT_DIR$/asistencia_integration_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/asistencia_servicio/asistencia_servicio.iml" filepath="$PROJECT_DIR$/asistencia_servicio/asistencia_servicio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/asistencia_web/asistencia_web.iml" filepath="$PROJECT_DIR$/asistencia_web/asistencia_web.iml" />
+    </modules>
+  </component>
+</project>

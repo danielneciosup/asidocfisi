@@ -19,14 +19,13 @@ public class DocenteBO implements java.io.Serializable {
 	private String apeMaterno;
 	private Date feNacimiento;
 	private String email;
-	private String claveSistema;
 
 	public DocenteBO() {
 	}
 
 	public DocenteBO(int idDocente, String codDocente, String numDni,
 			String nomDocente, String apePaterno, String apeMaterno,
-			Date feNacimiento, String email, String claveSistema) {
+			Date feNacimiento, String email) {
 		this.idDocente = idDocente;
 		this.codDocente = codDocente;
 		this.numDni = numDni;
@@ -35,7 +34,6 @@ public class DocenteBO implements java.io.Serializable {
 		this.apeMaterno = apeMaterno;
 		this.feNacimiento = feNacimiento;
 		this.email = email;
-		this.claveSistema = claveSistema;
 	}
 
 	public int getIdDocente() {
@@ -100,13 +98,5 @@ public class DocenteBO implements java.io.Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getClaveSistema() {
-		return this.claveSistema;
-	}
-
-	public void setClaveSistema(String claveSistema) {
-		this.claveSistema = claveSistema;
 	}
 }

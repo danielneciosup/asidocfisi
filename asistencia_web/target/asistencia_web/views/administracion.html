@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang=en-US>
-<head>
+<html lang=en-US xmlns:th="http://www.w3.org/1999/xhtml">
+<head xmlns:th="http://www.thymeleaf.org">
   <meta charset="UTF-8">
   <meta lang="es">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
@@ -20,222 +20,164 @@
 <body>
     <header>
         <div class="parte_azul">
-            <center><h2>SISTEMA DE CONTROL DE ASISTENCIA DOCENTE</h1></center>
+            <center><h2>SISTEMA DE CONTROL DE ASISTENCIA DOCENTE</h2></center>
         </div>
         <div class="container imagen_logo">
             <figure class="fisi-logo-container pull-left">
                 <a href="http://sistemas.unmsm.edu.pe/" target="_blank"><img class="fi  si-logo img-responsive" src="img/logo.png" alt="Logotipo de la Facultad de Ingeniería de Sistemas e Informática - Enlace al home de La página"/></a>
             </figure>
-            <h2>Administrador: Pedro Sanchez</h2>
+            <h2>Administrador: <span th:text="${session.nombre + ' ' + session.apellido}"></span></h2>
         </div>
     </header>
     <div class="container">
-  <div class="row">
-    
-    <div class="container">
       <div class="row">
-          <div class="col-sm-3 col-md-3">
-              <div class="panel-group" id="accordion">
-                  <div class="panel panel-default">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                        <div class="panel-heading">
-                          <h4 class="panel-title">
-                              Mantenimiento
-                          </h4>
-                        </div>
-                      </a>
-                      
-                      <!--
-                      <button type="button" class="btn btn-primary" th:id="#{docente}"></button>
-                      -->
-                      
-                      
-                      <div id="collapseOne" class="panel-collapse collapse">
-                          <div class="panel-body">
-                              <table class="table">
-                                  <tr>
-                                    <th id="docente">
-                                      <a href="#" >
-                                        Docentes
-                                      </a>
-                                    </th>
-                                  </tr>
-                                  <!--  
-                                  <tr>
-                                    <th>
-                                      <a th:href="@{docente}" >
-                                        Docentes Test
-                                      </a>
-                                    </th>
-                                  </tr>
-                                  -->
-                                  <tr>
-                                    <td id="cursos">
-                                      <a href="#">
-                                        Cursos
-                                      </a>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td id="horarios">
-                                      <a href="#">
-                                        Horarios
-                                      </a>
-                                    </td>
-                                  </tr>
-                              </table>
+
+        <div class="container">
+          <div class="row">
+              <div class="col-sm-3 col-md-3">
+                  <div class="panel-group" id="accordion">
+                      <div class="panel panel-default">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                  Mantenimiento
+                              </h4>
+                            </div>
+                          </a>
+                          <div id="collapseOne" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                  <table class="table">
+                                      <tr>
+                                        <td id="docente">
+                                          <a href="#" >
+                                            Docentes
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td id="cursos">
+                                          <a href="#">
+                                            Cursos
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td id="horarios">
+                                          <a href="#">
+                                            Horarios
+                                          </a>
+                                        </td>
+                                      </tr>
+                                  </table>
+                              </div>
                           </div>
                       </div>
+                      <div class="panel panel-default">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    Control
+                                </h4>
+                            </div>
+                          </a>
+                          <div id="collapseTwo" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                  <table class="table">
+                                      <tr>
+                                          <td id="generar_reportes">
+                                              <a href="#">Asistencias</a>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td id="confirmar_asistencia">
+                                              <a href="#">Asistencias por confirmar</a>
+                                          </td>
+                                      </tr>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+                      <a th:href="@{/logout}">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    Cerrar Sesión
+                                </h4>
+                            </div>
+                        </div>
+                      </a>
                   </div>
-                  <div class="panel panel-default">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                Control
-                            </h4>
-                        </div>
-                      </a>
-                      <div id="collapseTwo" class="panel-collapse collapse">
-                          <div class="panel-body">
-                              <table class="table">
-                                  <tr>
-                                      <td id="generar_reportes">
-                                          <a href="#">Asistencias</a> 
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td id="confirmar_asistencia">
-                                          <a href="#">Asistencias por confirmar</a>
-                                      </td>
-                                  </tr>
-                              </table>
-                          </div>
-                      </div>
-                  </div>  
-                  <a th:href="@{/}">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                Cerrar Sesión
-                            </h4>
-                        </div>
-                    </div>
-                  </a>
               </div>
+              <div class="col-md-9 col-sm-9 well">
+                  <div id="main">
+                    <!--<iframe id="content" style="width: 100%; height: 500px;border-radius: 10px;"></iframe>-->
+                    <div id="content" style="width: 100%; height: 500px;border-radius: 10px;overflow:auto;"></div>
+                  </div>
+
+                </div>
           </div>
-          <div class="col-md-9 col-sm-9 well">
-              <div id="main">
-                <!--<iframe id="content" style="width: 100%; height: 500px;border-radius: 10px;"></iframe>-->
-                <div id="content" style="width: 100%; height: 500px;border-radius: 10px;overflow:auto;"></div>
-              </div>
-
-            </div>
+         </div>
       </div>
-  </div>
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script>
-     /*$(function(){
-          $('#mitabla').tablesorter(); 
-      });
-      
-      $(document).ready(function(e) 
-	  {
-    	  th:onclick="click(#{horarios})"	
-    	  th:attr="onclick=content(${/horarios})"
-	  });*/
-	  //? .-. esq así exxel ha hecho el html, modifcarlo si cuesta un poco mas porque le ha puesto tamaño en duro me miaginoummm 
-			  // a ver veamos su html 
-	 $(document).ready(function()
-	 {
-		$("#docente").click(function()
-		{
-			//alert("docentes clicked!");
-			$("#content").load("/asistencia_web/docente");
-		});
-		
-		$("#cursos").click(function()
-		{
-			//alert("docentes clicked!");
-			$("#content").load("/asistencia_web/cursos");
-		});
-	 });	
-	      	  
-    	  
-    	  /*
-		  
-		  $(document).ready(function(e) 
-		 		  {
-		          
-		    	      th:onclick="click(${horarios})"
-		    		  th:attr="onclick=content(${horarios})"
-		  
-		  
-    	  $('#horarios').on('click', function()
-		  {          
-             $('#content').attr('src', 'horarios.html');
-          });
-    	      
-    	      $('#{docente}').on('click', function()
-             {
-                $('#content').attr('src', '#{/docente}');          
-             });
-    	      
-    	      
-    	      
-    	      
-    	      
-    	      
-    	      
-    	      
-    	      
-    	      
-    	      $('#docente').on('click', function()
-    	              {
-    	                 $('#content').attr('th:src', '#{/docente}');          
-    	              });
-    	              
-    	              
-    	            $('#cursos').on('click', function(){   
-    	              $('#content').attr('src', 'cursos.html');
-    	              
-    	            });
-    	            $('#generar_reportes').on('click', function(){   
-    	              $('#content').attr('src', 'generar_reportes.html');
-    	              
-    	            });
-    	            $('#confirmar_asistencia').on('click', function(){   
-    	              $('#content').attr('src', 'confirmar_asistencia.html');
-    	              
-    	            });
-    	      
-    	      
-    	  */
-          
-          
-          
-      //});
+     </div>
 
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>
 
-      $("#myModal").on("show", function() {    // wire up the OK button to dismiss the modal when shown
-          $("#myModal a.btn").on("click", function(e) {
-              console.log("button pressed");   // just as an example...
-              $("#myModal").modal('hide');     // dismiss the dialog
-          });
-      });
-      $("#myModal").on("hide", function() {    // remove the event listeners when the dialog is dismissed
-          $("#myModal a.btn").off("click");
-      });
-      
-      $("#myModal").on("hidden", function() {  // remove the actual elements from the DOM when fully hidden
-          $("#myModal").remove();
-      });
-      
-      $("#myModal").modal({                    // wire up the actual modal functionality and show the dialog
+     <script>
+         alert("inner Test!");
+
+         console.log("document are not ready :C");
+
+          /**/
+
+     </script>
+<script>
+    //alert("Test!");
+    $(document).ready(function()
+    {
+        $("#docente").click(function()
+        {
+            //alert("docentes clicked!");
+            //debugger;
+            $("#content").load( "/docente" );
+        });
+
+        $("#cursos").click(function()
+        {
+            //alert("docentes clicked!");
+            $("#content").load("/cursos");
+        });
+
+        $("#horarios").click(function ()
+        {
+            $( "#content" ).load( "/horarios" );
+        });
+    });
+
+    $("#myModal").on("show", function()
+    {    // wire up the OK button to dismiss the modal when shown
+        $("#myModal a.btn").on("click", function(e)
+        {
+            //console.log("button pressed");   // just as an example...
+            $("#myModal").modal('hide');     // dismiss the dialog
+        });
+    });
+
+    $("#myModal").on("hide", function()
+    {    // remove the event listeners when the dialog is dismissed
+        $("#myModal a.btn").off("click");
+    });
+
+    $("#myModal").on("hidden", function()
+    {  // remove the actual elements from the DOM when fully hidden
+        $("#myModal").remove();
+    });
+
+    $("#myModal").modal
+    ({                    // wire up the actual modal functionality and show the dialog
         "backdrop"  : "static",
         "keyboard"  : true,
         "show"      : true                     // ensure the modal is shown immediately
-      });
+    });
 
 </script>
 </body>
