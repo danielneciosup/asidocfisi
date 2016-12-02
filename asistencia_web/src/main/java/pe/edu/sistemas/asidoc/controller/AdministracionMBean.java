@@ -6,7 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import pe.edu.sistemas.asidoc.bo.CursoBO;
 import pe.edu.sistemas.asidoc.bo.DocenteBO;
+import pe.edu.sistemas.asidoc.servicio.CursoService;
 import pe.edu.sistemas.asidoc.servicio.DocenteService;
 
 import java.util.List;
@@ -17,7 +19,11 @@ public class AdministracionMBean
 	@Autowired
 	private DocenteService docenteService;
 
+	@Autowired
+	private CursoService cursoService;
+
 	private List<DocenteBO> docentes;
+	private List<CursoBO> cursos;
 
 	@RequestMapping( value = "/docente", method = RequestMethod.GET )
 	public String crudDocentes( Model docentesModel)
@@ -43,8 +49,19 @@ public class AdministracionMBean
 	}
 	
 	@RequestMapping( value = "/cursos", method = RequestMethod.GET )
-	public String crudCursos()
+	public String crudCursos( Model cursosModel )
 	{
+		try
+		{
+			cursos = cursoService.listarCursos();
+
+			cursosModel.addAttribute( "cursos", cursos );
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+
 		return "cursos";
 	}
 	
