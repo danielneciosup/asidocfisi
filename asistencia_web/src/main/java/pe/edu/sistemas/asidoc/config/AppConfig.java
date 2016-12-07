@@ -1,10 +1,5 @@
 package pe.edu.sistemas.asidoc.config;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import nz.net.ultraq.thymeleaf.LayoutDialect;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,15 +7,13 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.thymeleaf.dialect.IDialect;
-import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring3.SpringTemplateEngine;
 import org.thymeleaf.spring3.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan( "pe.edu.sistemas.asidoc.web" )
+@ComponentScan( "pe.edu.sistemas.asidoc" )
 public class AppConfig extends WebMvcConfigurerAdapter
 {
 
@@ -33,7 +26,7 @@ public class AppConfig extends WebMvcConfigurerAdapter
         resolver.setSuffix( ".html" );
         resolver.setTemplateMode( "LEGACYHTML5" );
         resolver.setCharacterEncoding( "UTF-8" );
-        resolver.setCacheable( false ); // En producción True
+        resolver.setCacheable( false ); // En producciï¿½n True
         
         return resolver;
     }

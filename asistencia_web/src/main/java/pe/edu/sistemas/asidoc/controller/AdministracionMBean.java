@@ -3,13 +3,14 @@ package pe.edu.sistemas.asidoc.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pe.edu.sistemas.asidoc.bo.CursoBO;
 import pe.edu.sistemas.asidoc.bo.DocenteBO;
+import pe.edu.sistemas.asidoc.bo.HorarioBO;
 import pe.edu.sistemas.asidoc.servicio.CursoService;
 import pe.edu.sistemas.asidoc.servicio.DocenteService;
+import pe.edu.sistemas.asidoc.servicio.transformer.HorarioService;
 
 import java.util.List;
 
@@ -22,8 +23,12 @@ public class AdministracionMBean
 	@Autowired
 	private CursoService cursoService;
 
+	@Autowired
+	private HorarioService horarioService;
+
 	private List<DocenteBO> docentes;
 	private List<CursoBO> cursos;
+	private List<HorarioBO> horarios;
 
 	@RequestMapping( value = "/docente", method = RequestMethod.GET )
 	public String crudDocentes( Model docentesModel)
@@ -33,6 +38,7 @@ public class AdministracionMBean
 			docentes = docenteService.listarDocentes();
 
 			docentesModel.addAttribute( "docentes", docentes );
+			
 		}
 		catch (Exception e)
 		{
@@ -66,8 +72,12 @@ public class AdministracionMBean
 	}
 	
 	@RequestMapping( value = "/horarios", method = RequestMethod.GET )
-	public String crudHorarios()
-	{			
+	public String crudHorarios( Model horariosModel )
+	{
+		horarios = horarioService.listarHorarios();
+
+		horariosModel.addAttribute( "horarios", horarios );
+
 		return "horarios";
 	}
 

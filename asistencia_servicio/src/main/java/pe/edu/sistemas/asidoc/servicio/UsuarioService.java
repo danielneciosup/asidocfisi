@@ -2,9 +2,9 @@ package pe.edu.sistemas.asidoc.servicio;
 
 import java.util.List;
 
+import pe.edu.sistemas.asidoc.bo.UsuarioBO;
 import pe.edu.sistemas.asidoc.bo.PersonalBO;
 import pe.edu.sistemas.asidoc.bo.RolBO;
-import pe.edu.sistemas.asidoc.bo.UsuarioBO;
 
 public interface UsuarioService 
 {
@@ -23,7 +23,7 @@ public interface UsuarioService
 	 * @return la entidad correspondiente al identificador del usuario.
 	 * @throws Exception
 	 */
-	public UsuarioBO obtenerUsuario( Integer idUsuario ) throws Exception;
+	public UsuarioBO obtenerUsuario(Integer idUsuario ) throws Exception;
 	
 	/**
 	 * Obtiene los roles del usuario.

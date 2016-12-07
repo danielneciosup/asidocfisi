@@ -12,19 +12,19 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import pe.edu.sistemas.asidoc.bo.PersonalBO;
-import pe.edu.sistemas.asidoc.bo.RolBO;
 import pe.edu.sistemas.asidoc.core.dao.DAOImpl;
 import pe.edu.sistemas.asidoc.dao.UsuarioDao;
 import pe.edu.sistemas.asidoc.dao.dominio.Usuario;
+import pe.edu.sistemas.asidoc.bo.PersonalBO;
+import pe.edu.sistemas.asidoc.bo.RolBO;
 import pe.edu.sistemas.asisdoc.core.util.BaseDAO;
 import pe.edu.sistemas.asisdoc.core.util.Conexion;
 
 @Repository( "usuarioDao" )
 @Transactional
-public class UsuarioDaoImpl extends DAOImpl< Usuario, Integer > implements UsuarioDao  
+public class UsuarioDaoImpl extends DAOImpl< Usuario, Integer > implements UsuarioDao
 {
-	public Usuario obtenerUsuario(Integer idUsuario) throws Exception 
+	public Usuario obtenerUsuario(Integer idUsuario) throws Exception
 	{
 		return super.obtenerEntidadPorId( Usuario.class, idUsuario );
 	}

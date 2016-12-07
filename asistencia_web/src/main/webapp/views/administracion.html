@@ -148,6 +148,16 @@
         {
             $( "#content" ).load( "/horarios" );
         });
+
+        $( "#generar_reportes" ).click( function ()
+        {
+            $( "#content" ).load( "/asistencia" );
+        } );
+
+        $( "#confirmar_asistencia" ).click( function ()
+        {
+            $( "#content" ).load( "/confirmar-asistencia" );
+        } );
     });
 
     $("#myModal").on("show", function()

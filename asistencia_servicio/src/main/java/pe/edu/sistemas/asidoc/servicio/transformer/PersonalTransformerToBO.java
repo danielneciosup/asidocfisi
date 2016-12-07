@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import pe.edu.sistemas.asidoc.bo.PersonalBO;
 import pe.edu.sistemas.asidoc.core.transformer.Transformer;
+import pe.edu.sistemas.asidoc.bo.PersonalBO;
 import pe.edu.sistemas.asidoc.dao.dominio.Personal;
 
 @Component( "personalTransformerToBO" )

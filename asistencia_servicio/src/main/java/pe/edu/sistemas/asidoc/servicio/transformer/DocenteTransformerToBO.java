@@ -2,9 +2,9 @@ package pe.edu.sistemas.asidoc.servicio.transformer;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import pe.edu.sistemas.asidoc.bo.DocenteBO;
 import pe.edu.sistemas.asidoc.core.transformer.Transformer;
 import pe.edu.sistemas.asidoc.dao.dominio.Docente;
+import pe.edu.sistemas.asidoc.bo.DocenteBO;
 
 import java.util.ArrayList;
 import java.util.List;

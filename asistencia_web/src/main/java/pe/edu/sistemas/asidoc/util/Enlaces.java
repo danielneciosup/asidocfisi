@@ -1,24 +1,24 @@
 package pe.edu.sistemas.asidoc.util;
 
 /**
- * La clase Enlaces tiene variables String estáticas de las urls de las páginas del sistema.
+ * La clase Enlaces tiene variables String estï¿½ticas de las urls de las pï¿½ginas del sistema.
  * @author Daniel
  *
  */
 public class Enlaces
 {
 	/**
-	 * Enlace a la página de inicio del sistema.
+	 * Enlace a la pï¿½gina de inicio del sistema.
 	 */
 	public static String INICIO = "inicio";
 	
 	/**
-	 * Enlace a la Página de Roles Del Usuario.
+	 * Enlace a la Pï¿½gina de Roles Del Usuario.
 	 */
 	public static String ROLES = "roles";
 	
 	/**
-	 * Enlace a la Página correspondiente al rol de administrador.
+	 * Enlace a la Pï¿½gina correspondiente al rol de administrador.
 	 */
 	public static final String ADMINISTRACION = "administracion";
 }

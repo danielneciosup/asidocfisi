@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=en-US>
+<html lang=en-US xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <meta lang="es">
@@ -32,7 +32,8 @@
 		  <thead>
 		    <tr>
 		      <th><span>Curso</span></th>
-		      <th><span>Días</span></th>
+		      <th><span>Día</span></th>
+		      <th><span>Docente</span></th>
 		      <th><span>Hora inicio</span></th>
 		      <th><span>Hora fin</span></th>
 		      <th><span>Grupo</span></th>
@@ -42,86 +43,23 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		    <tr>
-		      <td class="align-left">Cell1</td>
-		      <td>Cell2</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td>Cell5</td>
-		      <td>Cell6</td>
+		    <tr th:each="horario:${horarios}">
+		      <td class="align-left" th:text="${horario.nomCurso}">curso</td>
+		      <td class="align-left" th:text="${horario.nomDia}">dia</td>
+		      <td class="align-left" th:text="${horario.nomDocente}">docente</td>
+		      <td class="align-left" th:text="${horario.hoInicio}">hoInicio</td>
+		      <td class="align-left" th:text="${horario.hoFin}">hoFin</td>
+		      <td class="align-left" th:text="${horario.nomGrupo}">grupo</td>
+		      <td class="align-left" th:text="${horario.nomTipoClase}">tipoClase</td>
 		      <td id="eliminar1">
 		      	<a href="#">
 		      		<button data-toggle="modal"	class="btn btn-primary center-block">
 		      			<center><img src="img/eliminar.png"></center>
 		      		</button>
 		      	</a>
-		      </td>
-		      <td><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block"><center><img src="img/modificar.png"></center></button></td>
-		    </tr>
-		    <tr>
-		      <td class="align-left">Cell1</td>
-		      <td>Cell2</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td>Cell5</td>
-		      <td>Cell6</td>
-		      <td id="eliminar2">
-		      	<a href="#">
-		      		<button data-toggle="modal"	class="btn btn-primary center-block">
-		      			<center><img src="img/eliminar.png"></center>
-		      		</button>
-		      	</a>
-		      </td>
-		      <td><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block"><center><img src="img/modificar.png"></center></button></td>
-		    </tr>
-		    <tr>
-		      <td class="align-left">Cell1</td>
-		      <td>Cell2</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td>Cell5</td>
-		      <td>Cell6</td>
-		      <td id="eliminar3">
-		      	<a href="#">
-		      		<button data-toggle="modal"	class="btn btn-primary center-block">
-		      			<center><img src="img/eliminar.png"></center>
-		      		</button>
-		      	</a>
-		      </td>
-		      <td><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block"><center><img src="img/modificar.png"></center></button></td>
-		    </tr>
-		    <tr>
-		      <td class="align-left">Cell1</td>
-		      <td>Cell2</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td>Cell5</td>
-		      <td>Cell6</td>
-		      <td id="eliminar4">
-		      	<a href="#">
-		      		<button data-toggle="modal"	class="btn btn-primary center-block">
-		      			<center><img src="img/eliminar.png"></center>
-		      		</button>
-		      	</a>
-		      </td>
-		      <td><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block"><center><img src="img/modificar.png"></center></button></td>
-		    </tr>
-		    <tr>
-		      <td class="align-left">Cell1</td>
-		      <td>Cell2</td>
-		      <td>Cell3</td>
-		      <td>Cell4</td>
-		      <td>Cell5</td>
-		      <td>Cell6</td>
-		      <td id="eliminar5">
-		      	<a href="#">
-		      		<button data-toggle="modal"	class="btn btn-primary center-block">
-		      			<center><img src="img/eliminar.png"></center>
-		      		</button>
-		      	</a>
-		      </td>
-		      <td><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block"><center><img src="img/modificar.png"></center></button></td>
-		    </tr>
+		       </td>
+		       <td><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block"><center><img src="img/modificar.png"></center></button></td>
+		      </tr>
 		  </tbody>
 		</table> 
 		<center>

@@ -33,6 +33,7 @@
 		    </tr>
 		  </thead>
 		  <tbody>
+			<!--/*@thymesVar id="cursos" type="cursos"*/-->
 			<tr th:each="curso:${cursos}">
 				<td class="align-left" th:text="${curso.coCurso}">codigo</td>
 				<td class="align-left" th:text="${curso.nomCurso}">curso</td>

@@ -11,50 +11,83 @@ import java.util.Set;
  */
 public class HorarioBO implements java.io.Serializable {
 
-	private int idHorario;
+	private String nomCurso;
 	private String nomDia;
-	private Date hoInicio;
-	private Date hoFin;
+	private String nomDocente;
+	private String hoInicio;
+	private String hoFin;
+	private String nomGrupo;
+	private String nomTipoClase;
 
 	public HorarioBO() {
 	}
 
-	public HorarioBO(int idHorario, String nomDia, Date hoInicio, Date hoFin) {
-		this.idHorario = idHorario;
-		this.nomDia = nomDia;
-		this.hoInicio = hoInicio;
-		this.hoFin = hoFin;
+	public String getNomCurso() {
+		return nomCurso;
 	}
 
-	public int getIdHorario() {
-		return this.idHorario;
-	}
-
-	public void setIdHorario(int idHorario) {
-		this.idHorario = idHorario;
+	public void setNomCurso(String nomCurso) {
+		this.nomCurso = nomCurso;
 	}
 
 	public String getNomDia() {
-		return this.nomDia;
+		return nomDia;
 	}
 
 	public void setNomDia(String nomDia) {
 		this.nomDia = nomDia;
 	}
 
-	public Date getHoInicio() {
-		return this.hoInicio;
+	public String getNomDocente() {
+		return nomDocente;
 	}
 
-	public void setHoInicio(Date hoInicio) {
+	public void setNomDocente(String nomDocente) {
+		this.nomDocente = nomDocente;
+	}
+
+	public String getHoInicio() {
+		return hoInicio;
+	}
+
+	public void setHoInicio(String hoInicio) {
 		this.hoInicio = hoInicio;
 	}
 
-	public Date getHoFin() {
-		return this.hoFin;
+	public String getHoFin() {
+		return hoFin;
 	}
 
-	public void setHoFin(Date hoFin) {
+	public void setHoFin(String hoFin) {
 		this.hoFin = hoFin;
+	}
+
+	public String getNomGrupo() {
+		return nomGrupo;
+	}
+
+	public void setNomGrupo(String nomGrupo) {
+		this.nomGrupo = nomGrupo;
+	}
+
+	public String getNomTipoClase() {
+		return nomTipoClase;
+	}
+
+	public void setNomTipoClase(String nomTipoClase) {
+		this.nomTipoClase = nomTipoClase;
+	}
+
+	@Override
+	public String toString() {
+		return "HorarioBO{" +
+				"nomCurso='" + nomCurso + '\'' +
+				", nomDia='" + nomDia + '\'' +
+				", nomDocente='" + nomDocente + '\'' +
+				", hoInicio='" + hoInicio + '\'' +
+				", hoFin='" + hoFin + '\'' +
+				", nomGrupo='" + nomGrupo + '\'' +
+				", nomTipoClase='" + nomTipoClase + '\'' +
+				'}';
 	}
 }

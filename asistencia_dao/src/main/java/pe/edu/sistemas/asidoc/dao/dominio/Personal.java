@@ -27,7 +27,8 @@ public class Personal implements java.io.Serializable {
 	}
 
 	public Personal(int idPersonal, String nombre, String apellido,
-			String correo) {
+			String correo)
+	{
 		this.idPersonal = idPersonal;
 		this.nombre = nombre;
 		this.apellido = apellido;
