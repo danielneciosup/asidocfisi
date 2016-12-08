@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=en-US xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang=en-US xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta lang="es">
@@ -111,14 +111,25 @@
                   <div id="main">
                     <!--<iframe id="content" style="width: 100%; height: 500px;border-radius: 10px;"></iframe>-->
                     <div id="content" style="width: 100%; height: 500px;border-radius: 10px;overflow:auto;"></div>
-                  </div>
+              </div>
 
                 </div>
           </div>
          </div>
       </div>
      </div>
-
+	<div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalContainer" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<center><h3 class="modal-title" id="lineModalLabel" style="font-weight: 600;color: #1b1d42;font-size:40px;">Datos Docente</h3></center>
+				</div>
+				<div class="modal-body" style="overflow:auto;">					
+		            <!-- content goes here -->
+				</div>
+			</div>
+		  </div>
+		</div>
      <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>
 
      <script>
@@ -135,31 +146,31 @@
     {
         $("#docente").click(function()
         {
-            $("#content").load( "/docente" );
+            $("#content").load( "/asistencia_web/docente" );
+            //alert("docentes clicked!");
         });
 
         $("#cursos").click(function()
         {
-            //alert("docentes clicked!");
-            $("#content").load("/cursos");
+            $("#content").load("/asistencia_web/cursos");
         });
 
         $("#horarios").click(function ()
         {
-            $( "#content" ).load( "/horarios" );
+            $( "#content" ).load( "/asistencia_web/horarios" );
         });
 
         $( "#generar_reportes" ).click( function ()
         {
-            $( "#content" ).load( "/asistencia" );
+            $( "#content" ).load( "/asistencia_web/asistencia" );
         } );
 
         $( "#confirmar_asistencia" ).click( function ()
         {
-            $( "#content" ).load( "/confirmar-asistencia" );
+            $( "#content" ).load( "/asistencia_web/confirmar-asistencia" );
         } );
     });
-
+	
     $("#myModal").on("show", function()
     {    // wire up the OK button to dismiss the modal when shown
         $("#myModal a.btn").on("click", function(e)

@@ -9,6 +9,8 @@ import java.util.List;
  */
 public interface DocenteService
 {
+	public DocenteBO obtenerDocentePorId( Integer docenteId ) throws Exception;
+	
     /**
      * Servicio que lista todos los docentes registrados en la Base de Datos.
      * @return un objeto de la clase {@link List} con objetos de la clase {@link DocenteBO}

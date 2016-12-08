@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang=en-US xmlns:th="http://www.thymeleaf.orgs">
-<head>
+<head xmlns:th="http://www.thymeleaf.org">
 	<meta charset="UTF-8">
 	<meta lang="es">
 	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
@@ -44,7 +44,15 @@
 		      <td class = "align-left" th:text = "${docente.apePaterno}">:apellido_paterno:</td>
 		      <td class = "align-left" th:text = "${docente.apeMaterno}">:apellido_materno:</td>
 		      <td class = "align-left" th:text = "${docente.email}">:correo:</td>
-		      <td><a href="ver_docente.html"><center><img src="img/ver.png"></center></a></td>
+		      <!--<td><a th:href="@{'/mostrar/'+${docente.idDocente}}"><center><img src="img/ver.png"></center></a></td> -->
+		      <td>
+		      	<center>
+		      		<img
+		      			th:onclick="'javascript:mostrarDocente('+${docente.idDocente}+');'" 
+		      			style="cursor:pointer;" 
+		      			src="img/ver.png">
+	      		</center>
+      		</td>
 		      <td id="eliminar1">
 		      	<a href="#">
 		      		<button data-toggle="modal" 
@@ -65,9 +73,19 @@
 	        <strong>Advertencia: </strong>¿Desea eliminar el registro?
 	    </div>
 	</div>
-	<script type="text/javascript">
+	<script type="text/javascript" th:inline="javascript">
+	//josafat================================================
+	var mostrarDocente = function(idDocente){
+		debugger;
+		var element = $("#modalContainer"); 
+		element.modal("show");
+		element.find(".modal-dialog").css("width","80%");
+		element.find(".modal-body").load("/asistencia_web/mostrar/" + idDocente);
+	};
+	//========================================================
 		$(document).ready(function() 
 		    { 
+				
 		        $(".tabla").tablesorter(); 
 		        $("#modificarDocente").click(function(){
 		        	$("#content").load("/asistencia_web/modificarDocente");

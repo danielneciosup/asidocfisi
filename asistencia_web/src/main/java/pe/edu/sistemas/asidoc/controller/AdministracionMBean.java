@@ -51,6 +51,8 @@ public class AdministracionMBean
 	@RequestMapping( value = "/modificarDocente", method = RequestMethod.GET )
 	public String modificarDocente()
 	{
+		
+		
 		return "modificar_docente";
 	}
 	

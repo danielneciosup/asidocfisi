@@ -9,5 +9,7 @@ import java.util.List;
  */
 public interface DocenteDao
 {
+	public Docente obtenerDocentePorId( Integer docenteId ) throws Exception;
+	
     public List<Docente> listarDocentes() throws Exception;
 }

@@ -19,45 +19,37 @@
 		</center>
 		<div class="container">
 			<div class="col-md-8 col-sm-8 col-xs-12">
-				<form class="navbar-form navbar-left">
+				<form class="navbar-form navbar-left" th:object = "${docente}">
 					<div class="row">
 						<div style="float: left;">
 			 				<p style="margin-top: 12px;">Código </p>
 				 		</div>
 				 		<div style="float: right;">	
-			 				<p style="margin-bottom: 5px;margin-top: 5px;">12345678</p>
+			 				<p style="margin-bottom: 5px;margin-top: 5px;" th:text = ${docente.codDocente}>12345678</p>
 				 		</div>
 					</div>
 					<div class="row">
 						<div style="float: left;">
-			 				<p style="margin-top: 12px;">Nombre </p>
+			 				<p style="margin-top: 12px;" >Nombre </p>
 				 		</div>
 				 		<div style="float: right;">	
-			 				<p style="margin-bottom: 5px;margin-top: 5px;">12345678</p>
+			 				<p style="margin-bottom: 5px;margin-top: 5px;" th:text = ${docente.nomDocente}>12345678</p>
 				 		</div>
 					</div>
 			 		<div class="row">
 						<div style="float: left;">
-			 				<p style="margin-top: 12px;">Apellido </p>
+			 				<p style="margin-top: 12px;" >Apellido </p>
 				 		</div>
 				 		<div style="float: right;">	
-			 				<p style="margin-bottom: 5px;margin-top: 5px;">12345678</p>
+			 				<p style="margin-bottom: 5px;margin-top: 5px;" th:text = ${docente.apePaterno}>12345678</p>
 				 		</div>
 					</div>
 			 		<div class="row">
 						<div style="float: left;">
-			 				<p style="margin-top: 12px;">Fecha de nacimiento </p>
+			 				<p style="margin-top: 12px;" >Fecha de nacimiento </p>
 				 		</div>
 				 		<div style="float: right;">	
-			 				<p style="margin-bottom: 5px;margin-top: 5px;">12345678</p>
-				 		</div>
-					</div>
-			 		<div class="row">
-						<div style="float: left;">
-			 				<p style="margin-top: 12px;">DNI </p>
-				 		</div>
-				 		<div style="float: right;">	
-			 				<p style="margin-bottom: 5px;margin-top: 5px;">12345678</p>
+			 				<p style="margin-bottom: 5px;margin-top: 5px;" th:text = "${docente.feNacimiento}">12345678</p>
 				 		</div>
 					</div>
 			 		<div class="row">
@@ -65,15 +57,7 @@
 			 				<p style="margin-top: 12px;">Correo </p>
 				 		</div>
 				 		<div style="float: right;">	
-			 				<p style="margin-bottom: 5px;margin-top: 5px;">12345678</p>
-				 		</div>
-					</div>
-			 		<div class="row">
-						<div style="float: left;">
-			 				<p style="margin-top: 12px;">Teléfono </p>
-				 		</div>
-				 		<div style="float: right;">	
-			 				<p style="margin-bottom: 5px;margin-top: 5px;">12345678</p>
+			 				<p style="margin-bottom: 5px;margin-top: 5px;" th:text = ${docente.email}>12345678</p>
 				 		</div>
 					</div>
 		      	</form>
@@ -84,12 +68,17 @@
 		</div>
 		<div class="container botones_registro_docente">
 			<center>
-				<a href="docente.html">
-					<button>Regresar</button>
+				<a href="#">
+					<button id="closeVerDocente">Regresar</button>
 				</a>
 			</center>
 		</div>
 	</div>	
+	<script>
+		$("#closeVerDocente").click(function(){
+			$('#modalContainer').modal({show:false});
+		});
+	</script>
 </body>
 
 </html>

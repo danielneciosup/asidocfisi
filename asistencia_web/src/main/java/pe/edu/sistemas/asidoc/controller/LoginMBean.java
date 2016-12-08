@@ -66,6 +66,7 @@ public class LoginMBean
 				request.getSession().setAttribute( "nombre", personal.getNombre() );
 				request.getSession().setAttribute( "apellido", personal.getApellido() );
 				request.getSession().setAttribute( "isLogout", 0 );
+				
 			} 
 			catch ( Exception e )
 			{

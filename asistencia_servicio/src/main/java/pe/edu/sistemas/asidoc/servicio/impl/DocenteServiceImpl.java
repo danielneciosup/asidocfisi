@@ -2,6 +2,7 @@ package pe.edu.sistemas.asidoc.servicio.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import pe.edu.sistemas.asidoc.servicio.DocenteService;
 import pe.edu.sistemas.asidoc.bo.DocenteBO;
 import pe.edu.sistemas.asidoc.dao.DocenteDao;
@@ -29,4 +30,12 @@ public class DocenteServiceImpl implements DocenteService
 
         return docenteTransformerToBO.transformer( docentes );
     }
+
+	@Override
+	public DocenteBO obtenerDocentePorId(Integer docenteId) throws Exception 
+	{
+		Docente docente = docenteDao.obtenerDocentePorId( docenteId );		
+		
+		return docenteTransformerToBO.transformer( docente );
+	}
 }
